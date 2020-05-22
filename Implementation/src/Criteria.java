@@ -2,7 +2,7 @@ public class Criteria {
     private int criteriaId;
     private String type;
     private String information;
-
+// comment
     public Criteria() {
 
     }
