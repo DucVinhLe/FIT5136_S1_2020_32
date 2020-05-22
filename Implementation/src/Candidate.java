@@ -19,6 +19,7 @@ public class Candidate {
 
     public static void main(String[] args) {
             System.out.println("Testing Git Hub");
+            // LUCAS test
     }
 
     public Candidate (){
