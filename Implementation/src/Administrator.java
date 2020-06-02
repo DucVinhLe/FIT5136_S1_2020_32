@@ -1,21 +1,18 @@
-public class Administrator extends Staff{
-
-   // Lee: Initialise function for Administrator
-    public void modifyMission(int params){
-
+public class Administrator extends User {
+    public Mission modifyMission(int params){
+        return null;
     }
-
-    public void selectSpaceShuttle(int params){
-
+    public SpaceShuttle selectSpaceShuttle(int params){
+        return null;
     }
-    public void createCriteria(){
-
+    public Criteria createCriteria(){
+        return null;
     }
-    public void setPriority(int params){
-
+    public Criteria setPriority(int params){
+        return null;
     }
-    public void selectCandidate(Candidate candidate){
-
+    public Candidate[] selectCandidate(Candidate candidate){
+        return null;
     }
     public void inform (int params){
 

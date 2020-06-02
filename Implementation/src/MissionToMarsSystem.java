@@ -10,20 +10,20 @@ public class MissionToMarsSystem {
 
     public static void main(String args[]) {
         MissionToMarsSystem system = new MissionToMarsSystem();
-        Staff staff1 = new Staff();
+        User staff1 = new User();
         system.login(staff1);
 
 
-        System.out.print(staff1.getStaffId() + " ");
+        System.out.print(staff1.getUserId() + " ");
         System.out.print(staff1.getName() + " ");
-        System.out.print(staff1.getRole() + " ");
+        System.out.print(staff1.getType() + " ");
         System.out.print(staff1.getContact() + " ");
         System.out.println();
 
         boolean shutdown = false;
         int operation = 0;
 
-        if (staff1.getRole().equals("Coordinator")) {
+        if (staff1.getType().equals("Coordinator")) {
             while (!shutdown) {
                 operation = system.selectOperation(staff1);
                 // validate operation selection
@@ -36,7 +36,7 @@ public class MissionToMarsSystem {
         }
         // updateProfile(candidate)
 
-        if (staff1.getRole().equals("Administrator")) {
+        if (staff1.getType().equals("Administrator")) {
             while (!shutdown) {
                 operation = system.selectOperation(staff1);
                 if (operation == 1) {
@@ -57,7 +57,7 @@ public class MissionToMarsSystem {
 
     }
 
-    public int selectOperation(Staff staff1) {
+    public int selectOperation(User staff1) {
         int operation = 0;
 
 
@@ -67,7 +67,7 @@ public class MissionToMarsSystem {
     }
 
 
-    public void login(Staff staff) {
+    public void login(User staff) {
         Display screen = new Display();
         boolean success = false;
 
@@ -106,9 +106,9 @@ public class MissionToMarsSystem {
                 // login success
                 if (username.equals(singleInfo[3]) && password.equals(singleInfo[4])) {
                     // store the corresponding information into staff1
-                    staff.setStaffId(Integer.parseInt(singleInfo[0]));
+                    staff.setUserId(Integer.parseInt(singleInfo[0]));
                     staff.setName(singleInfo[1]);
-                    staff.setRole(singleInfo[2]);
+                    staff.setType(singleInfo[2]);
                     staff.setContact(singleInfo[5]);
                     success = true;
                     screen.displayLoginSuccessful(staff.getName());

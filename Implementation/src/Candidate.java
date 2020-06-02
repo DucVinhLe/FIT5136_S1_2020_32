@@ -1,12 +1,9 @@
 import java.util.Date;
 
-public class Candidate {
-    private int candidateId;
-    private String name;
+public class Candidate extends User{
     private Date dateOfBirth;
     private String address;
     private String nationality;
-    private String contact;
     private String identificationNumber;
     private String gender;
     private String[] allergies;
@@ -23,22 +20,6 @@ public class Candidate {
 
     public Candidate (){
 
-    }
-
-    public void setCandidateId(int candidateId) {
-        this.candidateId = candidateId;
-    }
-
-    public int getCandidateId() {
-        return candidateId;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
     }
 
     public void setDateOfBirth(Date dateOfBirth) {
@@ -63,14 +44,6 @@ public class Candidate {
 
     public String getNationality() {
         return nationality;
-    }
-
-    public void setContact(String contact) {
-        this.contact = contact;
-    }
-
-    public String getContact() {
-        return contact;
     }
 
     public void setIdentificationNumber(String identificationNumber) {

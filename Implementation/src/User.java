@@ -1,18 +1,18 @@
 import java.util.ArrayList;
 
-public class Staff {
-    private int staffId;
-    private String role;
+public class User {
+    private int userId;
+    private String type;
     private String name;
     private String contact;
 
-    Staff() {
+    User() {
 
     }
 
-    Staff(int id, String role, String name, String contact) {
-        this.staffId = id;
-        this.role = role;
+    User(int id, String type, String name, String contact) {
+        this.userId = id;
+        this.type = type;
         this.name = name;
         this.contact = contact;
     }
@@ -21,9 +21,9 @@ public class Staff {
 
         // Test creating staff using constructor
         String contact = "Phone: 1234567, Email: 1234567@qq.com";
-        Staff staff1 = new Staff(1, "Administrator", "Lucas", contact);
-        System.out.println("Staff ID: " + staff1.getStaffId());
-        System.out.println("Staff Role: " + staff1.getRole());
+        User staff1 = new User(1, "Administrator", "Lucas", contact);
+        System.out.println("Staff ID: " + staff1.getUserId());
+        System.out.println("Staff Role: " + staff1.getType());
         System.out.println("Staff Name: " + staff1.getName());
         System.out.println("Staff Contact: " + staff1.getContact() + "\n");
 
@@ -70,12 +70,12 @@ public class Staff {
         return  found && match;
     }
 
-    public int getStaffId() {
-        return staffId;
+    public int getUserId() {
+        return userId;
     }
 
-    public void setStaffId(int staffId) {
-        this.staffId = staffId;
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
     public String getName() {
@@ -94,11 +94,11 @@ public class Staff {
         this.contact = contact;
     }
 
-    public String getRole() {
-        return role;
+    public String getType() {
+        return type;
     }
 
-    public void setRole(String role) {
-        this.role = role;
+    public void setType(String type) {
+        this.type = type;
     }
 }
