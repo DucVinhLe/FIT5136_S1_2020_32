@@ -5,6 +5,8 @@ public class User {
     private String type;
     private String name;
     private String contact;
+    private String username;
+    private String password;
 
     User() {
 
@@ -32,7 +34,7 @@ public class User {
         String password = "1234567";
 
         // Test login method
-        boolean result = staff1.login(username, password);
+        boolean result = staff1.login1(username, password);
         if (result == true) {
             System.out.println("Login Successfully");
         } else {
@@ -41,7 +43,7 @@ public class User {
 
     }
 
-    public boolean login(String username, String password) {
+    public boolean login1(String username, String password) {
         boolean found = false;
         boolean match = false;
 
@@ -68,6 +70,14 @@ public class User {
         }
 
         return  found && match;
+    }
+
+    public void login(String username, String password) {
+
+    }
+
+    public void logOut(String username) {
+
     }
 
     public int getUserId() {
@@ -101,4 +111,21 @@ public class User {
     public void setType(String type) {
         this.type = type;
     }
+
+    public String getUsername() {
+        return  username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
 }
