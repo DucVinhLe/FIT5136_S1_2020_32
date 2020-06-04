@@ -6,13 +6,13 @@ public class Candidate extends User {
     private String nationality;
     private String identificationNumber;
     private String gender;
-    private String[] allergies;
+    private String allergies;
     private String foodPreference;
     private String qualification;
     private String workExperience;
     private String occupation;
-    private String[] computerSkill;
-    private String[] languageKnown;
+    private String computerSkill;
+    private String languageKnown;
 
     public static void main(String[] args) {
         System.out.println("Testing Git Hub");
@@ -62,13 +62,7 @@ public class Candidate extends User {
         return gender;
     }
 
-    public void setAllergies(String[] allergies) {
-        this.allergies = allergies;
-    }
 
-    public String[] getAllergies() {
-        return allergies;
-    }
 
     public void setFoodPreference(String foodPreference) {
         this.foodPreference = foodPreference;
@@ -94,20 +88,29 @@ public class Candidate extends User {
         return occupation;
     }
 
-    public void setComputerSkill(String[] computerSkill) {
-        this.computerSkill = computerSkill;
+
+    public String getAllergies() {
+        return allergies;
     }
 
-    public String[] getComputerSkill() {
+    public void setAllergies(String allergies) {
+        this.allergies = allergies;
+    }
+
+    public String getComputerSkill() {
         return computerSkill;
     }
 
-    public void setLanguageKnown(String[] languageKnown) {
-        this.languageKnown = languageKnown;
+    public void setComputerSkill(String computerSkill) {
+        this.computerSkill = computerSkill;
     }
 
-    public String[] getLanguageKnown() {
+    public String getLanguageKnown() {
         return languageKnown;
+    }
+
+    public void setLanguageKnown(String languageKnown) {
+        this.languageKnown = languageKnown;
     }
 
     public void setWorkExperience(String workExperience) {
