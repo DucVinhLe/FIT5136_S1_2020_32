@@ -1,19 +1,17 @@
-import java.util.ArrayList;
-
 public class Mission {
-    private int missionId;
+
     private String name;
     private String description;
     private String countryOfOrigin;
     private String countriesAllowed;
-    private String coordinatorInfo;
-    private ArrayList<String> jobInfo;
-    private String employmentRequirements;
-    private String cargoRequirements;
+    private String status;
     private String launchDate;
     private String location;
     private String duration;
-    private String status;
+    private String jobInfo;
+    private String employmentRequirements;
+    private String cargoRequirements;
+    private String coordinatorInfo;
 
     public Mission() {
 
@@ -23,107 +21,99 @@ public class Mission {
 
     }
 
-    private int getMissionId(){
-        return missionId;
-    }
-
-    private String getName(){
+    public String getName(){
         return name;
     }
 
-    private String getDescription(){
+    public String getDescription(){
         return description;
     }
 
-    private String getCountryOfOrigin(){
+    public String getCountryOfOrigin(){
         return countryOfOrigin;
     }
 
-    private String getCountriesAllowed(){
+    public String getCountriesAllowed(){
         return countriesAllowed;
     }
 
-    private String getCoordinatorInfo(){
+    public String getCoordinatorInfo(){
         return coordinatorInfo;
     }
 
-    private ArrayList<String> getJobInfo(){
+    public String getJobInfo(){
         return jobInfo;
     }
 
-    private String getEmploymentRequirements(){
+    public String getEmploymentRequirements(){
         return employmentRequirements;
     }
 
-    private String getCargoRequirements(){
+    public String getCargoRequirements(){
         return cargoRequirements;
     }
 
-    private String getLaunchDate(){
+    public String getLaunchDate(){
         return launchDate;
     }
 
-    private String getLocation(){
+    public String getLocation(){
         return location;
     }
 
-    private String getDuration(){
+    public String getDuration(){
         return duration;
     }
 
-    private String getStatus(){
+    public String getStatus(){
         return status;
     }
 
-    private void setMissionId(int id){
-        this.missionId = id;
-    }
-
-    private void setName(String name){
+    public void setName(String name){
         this.name = name;
     }
 
-    private void setDescription(String description){
+    public void setDescription(String description){
         this.description = description;
     }
 
-    private void setCountryOfOrigin(String countryOfOrigin){
+    public void setCountryOfOrigin(String countryOfOrigin){
         this.countryOfOrigin = countryOfOrigin;
     }
 
-    private void setCountriesAllowed(String countriesAllowed){
+    public void setCountriesAllowed(String countriesAllowed){
         this.countriesAllowed = countriesAllowed;
     }
 
-    private void setCoordinatorInfo(String coordinatorInfo){
+    public void setCoordinatorInfo(String coordinatorInfo){
         this.coordinatorInfo = coordinatorInfo;
     }
 
-    private void setJobInfo(ArrayList<String> jobInfo){
+    public void setJobInfo(String jobInfo){
         this.jobInfo = jobInfo;
     }
 
-    private void setEmploymentRequirements(String employmentRequirements){
+    public void setEmploymentRequirements(String employmentRequirements){
         this.employmentRequirements = employmentRequirements;
     }
 
-    private void setCargoRequirements(String cargoRequirements){
+    public void setCargoRequirements(String cargoRequirements){
         this.cargoRequirements = cargoRequirements;
     }
 
-    private void setLaunchDate(String date){
+    public void setLaunchDate(String date){
         this.launchDate = date;
     }
 
-    private void setLocation(String location){
+    public void setLocation(String location){
         this.location = location;
     }
 
-    private void setDuration(String duration){
+    public void setDuration(String duration){
         this.duration = duration;
     }
 
-    private void setStatus(String status){
+    public void setStatus(String status){
         this.status = status;
     }
 

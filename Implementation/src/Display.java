@@ -12,11 +12,6 @@ public class Display {
         System.out.println("Press N to continue");
     }
 
-    public void goBack_enter() {
-        System.out.println();
-        System.out.println("Press B to go back");
-        System.out.println("Press Enter to continue");
-    }
 
     public void goBack() {
         System.out.println();
@@ -77,13 +72,12 @@ public class Display {
         System.out.println();
         System.out.println("*** Operation Selection ***");
         System.out.println();
-        System.out.println("Please select your operation:");
+        System.out.println("Please select your operation(Administrator):");
         System.out.println();
-        System.out.println("   1. Modify a mission");
-        System.out.println("   2. Select a space shuttle");
-        System.out.println("   3. Create selection criteria");
-        System.out.println("   4. Select candidates");
-        System.out.println("   5. Log out");
+        System.out.println("   1. Select a space shuttle");
+        System.out.println("   2. Create selection criteria");
+        System.out.println("   3. Select candidates");
+        System.out.println("   4. Log out");
         System.out.println();
     }
 
@@ -110,6 +104,12 @@ public class Display {
         System.out.println();
     }
 
+    // display the invalid input operation message
+    public void displayValidInput() {
+        System.out.println();
+        System.out.println("Please enter a valid input");
+    }
+
     // display log out
     public void displayLogOut() {
         System.out.println();
@@ -126,233 +126,81 @@ public class Display {
         System.out.println("    Press N to go back");
     }
 
-    // feature 1 create mission
-    public void displayCreateMission() {
-        System.out.println("\n\n\n\n\n");
-        System.out.println("        Create Mission");
-        System.out.println("\n\n\n\n\n\n\n");
-        displayContinue();
-    }
-
-
-    public void displayOperationValid() {
-        System.out.println();
-        System.out.println("Please enter a valid operation");
-    }
-
     public void missionInfo() {
-        System.out.println("\n\n");
-        System.out.println("  *** Mission Information ***");
-        System.out.println("\n\n");
-        System.out.println("Enter the following information:");
-        System.out.println(" ");
-        System.out.println("      Mission name:");
-        System.out.println("      Description:");
-        System.out.println("      Country of origin:");
-        System.out.println("      Countries allowed:");
+        System.out.println("Please Enter the following information:");
+        System.out.print("Mission name: ");
     }
 
-    // feature 1 create mission and enter mission info
-    public void displayMissionInfo() {
-        missionInfo();
-        goBack_enter();
+    public void missionDescription() {
+        System.out.print("Description: ");
     }
 
-    // feature 1 create mission and enter mission info
-    public void displayMissionInfoValid() {
-        missionInfo();
-        System.out.println(" ");
-        System.out.println("Mission information shouldn't be empty.");
-        goBack_enter();
+    public void missionCountryOrigin() {
+        System.out.print("Country of origin: ");
+    }
+
+    public void missionCountryAllowed() {
+        System.out.print("Countries allowed: ");
     }
 
     public void missionStatus() {
-        System.out.println("\n\n");
-        System.out.println("   *** Mission Status ***");
-        System.out.println("\n\n");
-        System.out.println("Select current mission status:");
-        System.out.println(" ");
+        System.out.println("Select the current mission status from:");
         System.out.println("      1. Planning phase");
         System.out.println("      2. Departed Earth");
         System.out.println("      3. Landed on Mars");
         System.out.println("      4. Mission in progress");
         System.out.println("      5. Returned to Earth");
         System.out.println("      6. Mission completed");
+        System.out.print("Mission Status: ");
     }
 
-    // feature 1 create mission select mission status
-    public void displayMissionStatus() {
-        missionStatus();
-        goBack_enter();
+    public void displayLaunchDate() {
+        System.out.print("Launch date: ");
     }
 
-    // feature 1 create mission select mission status
-    public void displayMissionStatusValid() {
-        missionStatus();
-        System.out.println("\n");
-        System.out.println("Please enter 1 to 6 only~");
-        goBack_enter();
+    public void displayLocation() {
+        System.out.print("Location of the destination(coordinates or address): ");
     }
 
-    public void launchDate() {
-        System.out.println("\n\n");
-        System.out.println("   *** Mission Information ***");
-        System.out.println("\n\n");
-        System.out.println("Enter the following information:");
-        System.out.println(" ");
-        System.out.println("Launch date:");
-        System.out.println("Location of the destination:");
-        System.out.println("Duration of the mission");
+    public void displayDuration() {
+        System.out.print("Duration of the mission: ");
     }
 
-    // feature 1 mission info
-    public void enterLaunchDate() {
-        launchDate();
-        goBack_enter();
+    public void displayJob() {
+        System.out.print("Job name and description: ");
     }
 
-    // feature 1 mission info
-    public void enterLaunchDateValid() {
-        launchDate();
-        System.out.println(" ");
-        System.out.println("Mission information shouldn't be empty.");
-        goBack_enter();
+    public void displayEmployment() {
+        System.out.print("Title and numbers: ");
+        System.out.println("e.g. 5 engineers, 4 builders");
     }
 
-    public void jobRequire() {
-        System.out.println("\n\n");
-        System.out.println("   *** Job Information ***");
-        System.out.println(" *** Employee Assignment ***");
-        System.out.println("\n\n");
-        System.out.println("Enter the following information:");
-        System.out.println(" ");
-        System.out.println("Job name:");
-        System.out.println("Job description:");
-        System.out.println("Titles");
-        System.out.println("Number of employees for each job:");
+    public void displayCargoRequirements() {
+        System.out.print("Cargo requirements(for journey, mission and other missions): ");
     }
 
-    // feature 1 job requirement
-    public void displayJobRequire() {
-        jobRequire();
-        System.out.println("\n\n");
-        System.out.println("Press A to add another job");
-        goBack_enter();
+    public void displayCoordinator() {
+        System.out.print("Coordinator's name and contact: ");
     }
 
-    // feature 1 job requirement
-    public void displayJobRequireValid() {
-        jobRequire();
-        System.out.println("\n\n");
-        System.out.println("Job information shouldn't be empty.");
-        System.out.println(" ");
-        System.out.println("Press A to add another job");
-        goBack_enter();
-    }
-
-    public void cargoRequire() {
-        System.out.println("\n\n");
-        System.out.println("   *** Cargo Requirement ***");
-        System.out.println("\n\n");
-        System.out.println("Enter the following information:");
-        System.out.println(" ");
-        System.out.println("Cargo requirement for the jounery:");
-        System.out.println("Cargo requirement for the mission:");
-        System.out.println("Cargo requirement for other missions");
-    }
-
-    //feature 1 cargo requirement
-    public void displayCargoRequire() {
-        cargoRequire();
-        goBack_enter();
-    }
-
-    //feature 1 cargo requirement
-    public void displayCargoRequireValid() {
-        cargoRequire();
-        System.out.println("\n\n");
-        System.out.println("Cargo requirement shouldn't be empty.");
-        goBack_enter();
-    }
-
-    public void assignCoordin() {
-        System.out.println("\n\n");
-        System.out.println("   *** Assigning Coordinator ***");
-        System.out.println("\n\n");
-        System.out.println("Enter the following information:");
-        System.out.println(" ");
-        System.out.println("Coordinator ID:");
-        System.out.println("Name:");
-        System.out.println("Email:");
-    }
-
-    // feature 1 create mission assigning coordinator
-    public void displayAssignCoordin() {
-        assignCoordin();
-        goBack_enter();
-    }
-
-    // feature 1 create mission assigning coordinator
-    public void displayAssignCoordinValid() {
-        assignCoordin();
-        System.out.println("\n\n");
-        System.out.println("Coordinator information shouldn't be empty.");
-        goBack_enter();
-    }
-
-    // log out
-    public void displayMissionAborted() {
-        System.out.println("\n\n\n\n");
-        System.out.println("             ***");
-        System.out.println("         Logged out ");
-        System.out.println("             ***");
-        System.out.println(" ");
-        System.out.println("      Mission Aborted.");
-        System.out.println("\n\n\n");
-        System.out.println("Press enter to Role Selection");
-    }
-
-    // feature 1 mission information
-    public void displayMissionInfo(String name, String description, String CouOrigin, String CouAllowed) {
-        System.out.println("\n\n");
-        System.out.println("   *** Mission Information***");
-        System.out.println("\n\n");
-        System.out.println("Mission name: " + name);
-        System.out.println("Description: " + description);
-        System.out.println("Country of origin: " + CouOrigin);
-        System.out.println("Countries allowed: " + CouAllowed);
-        System.out.println("\n\n");
-        System.out.println("Please make sure all the information above is correct.");
-        goBack_enter();
-    }
-
-    // feature 1 Confirmation
     public void displayConfirmMission() {
-        System.out.println("\n\n\n\n\n");
+        System.out.println();
         System.out.println("                ***");
         System.out.println("        NEW MISSION CREATED");
         System.out.println("                ***");
-        System.out.println("\n\n\n\n\n");
-        System.out.println("Please enter to Operation Selection");
+        System.out.println();
     }
 
-    // feature 2 select your shuttle
-    public void displaySelectShuttle() {
-        System.out.println("\n\n\n\n\n");
-        System.out.println("       Select Your Shuttle");
-        System.out.println("\n\n\n\n\n\n\n");
-        goBack_enter();
-    }
 
     // feature 2 enter shuttle ID
     public void enterShuttleID() {
-        System.out.println("\n\n");
+        System.out.println();
         System.out.println("   *** Shuttle Selection ***");
-        System.out.println("\n\n");
+        System.out.println();
         System.out.println("Enter your preferred shuttle ID:");
         System.out.println(" ");
         System.out.println("Or press enter to look up all the shuttles");
-        System.out.println("\n\n\n\n");
+        System.out.println();
         goBack();
     }
 
@@ -367,16 +215,15 @@ public class Display {
         System.out.println("Fuel: " + fuel);
         System.out.println("Speed: " + speed);
         System.out.println("Payload: " + payload);
-        goBack_enter();
     }
 
     // feature 2 shuttle not exist
     public void displayShuttleNotExist(int id) {
-        System.out.println("\n\n\n\n\n");
+        System.out.println();
         System.out.println("                 ***");
         System.out.println("Sorry, Shuttle " + id + " does not exist.");
         System.out.println("                 ***");
-        System.out.println("\n\n\n\n\n");
+        System.out.println();
         goBack();
     }
 
@@ -395,39 +242,6 @@ public class Display {
         System.out.println("             % \\  / %");
         System.out.println("               ^^ ^^");
         System.out.println("              !!! !!!");
-    }
-
-    // feature 2 run through all shuttles
-    public void displayEndShutte() {
-        System.out.println("\n\n\n\n\n");
-        System.out.println("                 ***");
-        System.out.println("You have run through all the shuttles.");
-        System.out.println("                 ***");
-        System.out.println("\n\n\n\n\n");
-        displayContinue();
-    }
-
-    // feature 3 create selection criteria
-    public void displayCreateSelectionCriteria() {
-        System.out.println("\n\n\n\n\n");
-        System.out.println("       Create Selection Criteria");
-        System.out.println("\n\n\n\n\n\n\n");
-        goBack_enter();
-    }
-
-    // feature 5 Select candidates
-    public void displaySelectCandidates() {
-        System.out.println("\n\n\n\n\n");
-        System.out.println("        Select Candidates");
-        System.out.println("\n\n\n\n\n\n\n");
-        goBack_enter();
-    }
-
-    public void displayCandidates(String[] candidates) {
-        for (int i = 0; i < candidates.length; i++) {
-            System.out.println(i+1 + ". " + candidates[i]);
-        }
-
     }
 
 }

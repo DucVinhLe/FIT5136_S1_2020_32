@@ -1,3 +1,7 @@
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -90,6 +94,28 @@ public class User {
             screen.displayLogOutSuccessful();
             System.exit(0);
         }
+    }
+
+    public void createMission(Mission mission) throws IOException {
+        File f = new File("Mission.txt");
+        if(!f.exists()){
+            f.createNewFile();
+        }
+        FileWriter buff = new FileWriter(f.getName(), true);
+        buff.write("*******************************************\n");
+        buff.write("Mission Name: " + mission.getName() + "\n");
+        buff.write("Mission Description: " + mission.getDescription() + "\n");
+        buff.write("Country of Origin: " + mission.getCountryOfOrigin() + "\n");
+        buff.write("Countries Allowed : " + mission.getCountriesAllowed() + "\n");
+        buff.write("Mission Status : " + mission.getStatus() + "\n");
+        buff.write("Launch Date : " + mission.getLaunchDate() + "\n");
+        buff.write("Mission Location: " + mission.getLocation() + "\n");
+        buff.write("Mission Duration: " + mission.getDuration() + "\n");
+        buff.write("Job Information : " + mission.getJobInfo() + "\n");
+        buff.write("Employment Requirements: " + mission.getEmploymentRequirements() + "\n");
+        buff.write("Cargo Requirements: " + mission.getCargoRequirements() + "\n");
+        buff.write("Coordinator Information" + mission.getCoordinatorInfo() + "\n\n");
+        buff.close();
     }
 
 }
