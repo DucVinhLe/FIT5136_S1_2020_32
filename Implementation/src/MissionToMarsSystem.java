@@ -10,64 +10,22 @@ public class MissionToMarsSystem {
 
     public static void main(String args[]) {
         MissionToMarsSystem system = new MissionToMarsSystem();
-        User staff1 = new User();
-        system.login(staff1);
+        User user1 = new User();
+        system.login(user1);
 
-
-        System.out.print(staff1.getUserId() + " ");
-        System.out.print(staff1.getName() + " ");
-        System.out.print(staff1.getType() + " ");
-        System.out.print(staff1.getContact() + " ");
+        System.out.print(user1.getUserId() + " ");
+        System.out.print(user1.getName() + " ");
+        System.out.print(user1.getType() + " ");
+        System.out.print(user1.getContact() + " ");
         System.out.println();
 
         boolean shutdown = false;
         int operation = 0;
 
-        if (staff1.getType().equals("Coordinator")) {
-            while (!shutdown) {
-                operation = system.selectOperation(staff1);
-                // validate operation selection
-                if (operation == 1) {
-                    // createMission(staff1);
-                } else {
-                    // display error input message
-                }
-            }
-        }
-        // updateProfile(candidate)
-
-        if (staff1.getType().equals("Administrator")) {
-            while (!shutdown) {
-                operation = system.selectOperation(staff1);
-                if (operation == 1) {
-                    // modifyMission(staff1);
-                } else if (operation == 2) {
-                    int missionID = 1;
-                    // selectSpaceShuttle(staff1, missionID);
-                } else if (operation == 3) {
-
-                } else if (operation == 4) {
-
-                }
-            }
-        }
-
-
-
-
     }
 
-    public int selectOperation(User staff1) {
-        int operation = 0;
-
-
-
-
-        return operation;
-    }
-
-
-    public void login(User staff) {
+    // user login function, include password validation
+    public void login(User user) {
         Display screen = new Display();
         boolean success = false;
 
@@ -78,14 +36,14 @@ public class MissionToMarsSystem {
             screen.displayLoginPassword();
             String password = scanner.next();
 
-            // load staff information from staff.txt
-            // store each staff's information into an ArrayList info
+            // load user information from user.txt
+            // store each user's information into an ArrayList info
             ArrayList<String> info = new ArrayList<>();
             try {
-                File f = new File("staff.txt");
+                File f = new File("user.txt");
                 BufferedReader buff = new BufferedReader(new FileReader(f));
                 String str;
-                while((str = buff.readLine()) != null) {
+                while ((str = buff.readLine()) != null) {
                     info.add(str);
                 }
                 info.remove(0); // remove the first row
@@ -93,25 +51,22 @@ public class MissionToMarsSystem {
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
                 System.exit(1);
-            }  catch (IOException e) {
+            } catch (IOException e) {
                 e.printStackTrace();
                 System.exit(1);
             }
 
-            // validate the staff's username and password
+            // validate the user's username and password
             String[] singleInfo = {};
             for (int i = 0; i < info.size(); i++) {
                 singleInfo = info.get(i).split(" ");
 
                 // login success
                 if (username.equals(singleInfo[3]) && password.equals(singleInfo[4])) {
-                    // store the corresponding information into staff1
-                    staff.setUserId(Integer.parseInt(singleInfo[0]));
-                    staff.setName(singleInfo[1]);
-                    staff.setType(singleInfo[2]);
-                    staff.setContact(singleInfo[5]);
+                    // call login function in User class to store the corresponding information into user1
+                    user.login(Integer.parseInt(singleInfo[0]), singleInfo[1], singleInfo[2], singleInfo[3], singleInfo[4], singleInfo[5]);
                     success = true;
-                    screen.displayLoginSuccessful(staff.getName());
+                    screen.displayLoginSuccessful(user.getName());
                     break;
                 }
             }
@@ -131,5 +86,9 @@ public class MissionToMarsSystem {
 
     }
 
+    public int selectOperation(User user) {
+        int operation = 0;
+        return operation;
+    }
 
 }

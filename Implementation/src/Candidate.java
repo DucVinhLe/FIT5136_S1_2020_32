@@ -1,6 +1,6 @@
 import java.util.Date;
 
-public class Candidate extends User{
+public class Candidate extends User {
     private Date dateOfBirth;
     private String address;
     private String nationality;
