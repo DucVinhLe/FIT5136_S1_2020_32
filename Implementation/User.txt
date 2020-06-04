@@ -4,3 +4,4 @@ Id Name Type Username Password Contact
 3 Jasper Administrator JieMa 123456 0410909090
 4 Kimberley Coordinator ZhidianLin 123456 0412345678
 5 Yiwei Coordinator Yiwei5136 1234567 0415201314
+6 Arvind Candidate Arvind001 123456 0415201413

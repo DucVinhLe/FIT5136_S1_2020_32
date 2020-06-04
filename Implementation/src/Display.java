@@ -8,13 +8,12 @@ public class Display {
 
     }
 
-    public void enterToContinue() {
-        System.out.println("\n");
-        System.out.println("Press Enter to continue");
+    public void displayContinue() {
+        System.out.println("Press N to continue");
     }
 
     public void goBack_enter() {
-        System.out.println("\n");
+        System.out.println();
         System.out.println("Press B to go back");
         System.out.println("Press Enter to continue");
     }
@@ -24,29 +23,6 @@ public class Display {
         System.out.println("Press B to go back");
     }
 
-    public void roleSelect() {
-        System.out.println(" ");
-        System.out.println("*** Welcome to Mission to Mars ***");
-        System.out.println("\n\n");
-        System.out.println("   Please select your option:");
-        System.out.println(" ");
-        System.out.println("   1. Administrator");
-        System.out.println("   2. Coordinator");
-    }
-
-    // feature 1 selection role screen
-    public void displayRoleSelection() {
-        roleSelect();
-        enterToContinue();
-    }
-
-    // feature 1 selection role screen validation
-    public void displayRoleSelectionValid() {
-        roleSelect();
-        System.out.println("\n");
-        System.out.println("Please enter 1 or 2 only~");
-        enterToContinue();
-    }
 
     public void displayLoginUsername() {
         System.out.println(" ");
@@ -61,20 +37,6 @@ public class Display {
         System.out.print("   Password: ");
     }
 
-    /*
-    // feature 1 login screen
-    public void displayLoginScreen() {
-        loginScreen();
-        goBack_enter();
-    }
-
-    // feature 1 login screen validation
-    public void displayLoginScreenValid() {
-        loginScreen();
-        System.out.println("\n\n\n");
-        System.out.println("Username or password shouldn't be empty!");
-    }
-    */
 
     // feature 1 login fail
     public void displayLoginFailed() {
@@ -89,87 +51,93 @@ public class Display {
 
     // feature 1 login successful
     public void displayLoginSuccessful(String username) {
-        System.out.println("\n");
+        System.out.println();
         System.out.println("             ***");
         System.out.println("      Login Successful");
         System.out.println("             ***");
         System.out.println(" ");
         System.out.println("       Hi! " + username + " =)");
         System.out.println();
-        //enterToContinue();
-        //System.out.println("Log out anytime by pressing X");
     }
 
-    public void displayLogOutX() {
-        System.out.println("                                   X");
-    }
 
-    // feature 1 log out
-    public void displayLogOut() {
-        System.out.println("\n\n");
-        System.out.println("          *** Log Out ***");
-        System.out.println("\n\n");
-        System.out.println("     Are you sure to log out?");
-        System.out.println("Your current mission will be aborted.");
-        goBack_enter();
-    }
 
-    // feature 1 log out successful
+    // log out successful
     public void displayLogOutSuccessful() {
-        System.out.println("\n");
+        System.out.println();
         System.out.println("             ***");
         System.out.println("    Logged out successful");
         System.out.println("             ***");
-        System.out.println(" ");
-        enterToContinue();
+        System.out.println();
+        System.out.println(" The system will shut down now");
     }
 
-    // feature 1 operation selection page for coordinator
-    public void displayOperationSelectionCoordin() {
-        displayLogOutX();
-        System.out.println("\n\n");
+    // display operation selections for administrator
+    public void displayOperationAdmin() {
+        System.out.println();
         System.out.println("*** Operation Selection ***");
-        System.out.println("\n\n");
-        System.out.println("Please select your option:");
-        System.out.println("\n\n");
-        System.out.println("    1. Create a mission");
-        enterToContinue();
-    }
-
-    // feature 1 create mission
-    public void displayCreateMission() {
-        displayLogOutX();
-        System.out.println("\n\n\n\n\n");
-        System.out.println("        Create Mission");
-        System.out.println("\n\n\n\n\n\n\n");
-        enterToContinue();
-    }
-
-    public void displayOperSelection() {
-        System.out.println("\n\n");
-        System.out.println("*** Operation Selection ***");
-        System.out.println("\n\n");
-        System.out.println("Please select your option:");
-        System.out.println(" ");
+        System.out.println();
+        System.out.println("Please select your operation:");
+        System.out.println();
         System.out.println("   1. Modify a mission");
         System.out.println("   2. Select a space shuttle");
         System.out.println("   3. Create selection criteria");
         System.out.println("   4. Select candidates");
+        System.out.println("   5. Log out");
+        System.out.println();
     }
 
-    // feature 1 operation selection page for Administrator
-    public void displayOperationSelectionAdmin() {
-        displayLogOutX();
-        displayOperSelection();
-        enterToContinue();
+    // display operation selections for coordinator
+    public void displayOperationCoordinator() {
+        System.out.println();
+        System.out.println("*** Operation Selection ***");
+        System.out.println();
+        System.out.println("Please select your operation:");
+        System.out.println();
+        System.out.println("    1. Create a mission");
+        System.out.println("    2. Log out");
+        System.out.println();
     }
 
-    public void displayOperationSelectionAdminValid() {
-        displayLogOutX();
-        displayOperSelection();
-        System.out.println("\n");
-        System.out.println("Please enter 1 to 4 only~");
-        enterToContinue();
+    // display operation selections for candidate
+    public void displayOperationCandidate() {
+        System.out.println();
+        System.out.println("*** Operation Selection ***");
+        System.out.println();
+        System.out.println("Please select your operation:");
+        System.out.println();
+        System.out.println("    1. Log out");
+        System.out.println();
+    }
+
+    // display log out
+    public void displayLogOut() {
+        System.out.println();
+        System.out.println("          *** Log Out ***");
+        System.out.println();
+        System.out.println("     Are you sure to log out?");
+        System.out.println();
+        displayLogOutConfirmation();
+    }
+
+    // display log out confirmation message
+    public void displayLogOutConfirmation() {
+        System.out.println("    Press Y to log out");
+        System.out.println("    Press N to go back");
+    }
+
+    // feature 1 create mission
+    public void displayCreateMission() {
+        System.out.println("\n\n\n\n\n");
+        System.out.println("        Create Mission");
+        System.out.println("\n\n\n\n\n\n\n");
+        displayContinue();
+    }
+
+
+    public void displayOperationValid() {
+        System.out.println();
+        System.out.println("Please enter a valid operation");
     }
 
     public void missionInfo() {
@@ -186,14 +154,12 @@ public class Display {
 
     // feature 1 create mission and enter mission info
     public void displayMissionInfo() {
-        displayLogOutX();
         missionInfo();
         goBack_enter();
     }
 
     // feature 1 create mission and enter mission info
     public void displayMissionInfoValid() {
-        displayLogOutX();
         missionInfo();
         System.out.println(" ");
         System.out.println("Mission information shouldn't be empty.");
@@ -216,14 +182,12 @@ public class Display {
 
     // feature 1 create mission select mission status
     public void displayMissionStatus() {
-        displayLogOutX();
         missionStatus();
         goBack_enter();
     }
 
     // feature 1 create mission select mission status
     public void displayMissionStatusValid() {
-        displayLogOutX();
         missionStatus();
         System.out.println("\n");
         System.out.println("Please enter 1 to 6 only~");
@@ -243,14 +207,12 @@ public class Display {
 
     // feature 1 mission info
     public void enterLaunchDate() {
-        displayLogOutX();
         launchDate();
         goBack_enter();
     }
 
     // feature 1 mission info
     public void enterLaunchDateValid() {
-        displayLogOutX();
         launchDate();
         System.out.println(" ");
         System.out.println("Mission information shouldn't be empty.");
@@ -272,7 +234,6 @@ public class Display {
 
     // feature 1 job requirement
     public void displayJobRequire() {
-        displayLogOutX();
         jobRequire();
         System.out.println("\n\n");
         System.out.println("Press A to add another job");
@@ -281,7 +242,6 @@ public class Display {
 
     // feature 1 job requirement
     public void displayJobRequireValid() {
-        displayLogOutX();
         jobRequire();
         System.out.println("\n\n");
         System.out.println("Job information shouldn't be empty.");
@@ -303,14 +263,12 @@ public class Display {
 
     //feature 1 cargo requirement
     public void displayCargoRequire() {
-        displayLogOutX();
         cargoRequire();
         goBack_enter();
     }
 
     //feature 1 cargo requirement
     public void displayCargoRequireValid() {
-        displayLogOutX();
         cargoRequire();
         System.out.println("\n\n");
         System.out.println("Cargo requirement shouldn't be empty.");
@@ -330,14 +288,12 @@ public class Display {
 
     // feature 1 create mission assigning coordinator
     public void displayAssignCoordin() {
-        displayLogOutX();
         assignCoordin();
         goBack_enter();
     }
 
     // feature 1 create mission assigning coordinator
     public void displayAssignCoordinValid() {
-        displayLogOutX();
         assignCoordin();
         System.out.println("\n\n");
         System.out.println("Coordinator information shouldn't be empty.");
@@ -358,7 +314,6 @@ public class Display {
 
     // feature 1 mission information
     public void displayMissionInfo(String name, String description, String CouOrigin, String CouAllowed) {
-        displayLogOutX();
         System.out.println("\n\n");
         System.out.println("   *** Mission Information***");
         System.out.println("\n\n");
@@ -373,7 +328,6 @@ public class Display {
 
     // feature 1 Confirmation
     public void displayConfirmMission() {
-        displayLogOutX();
         System.out.println("\n\n\n\n\n");
         System.out.println("                ***");
         System.out.println("        NEW MISSION CREATED");
@@ -384,7 +338,6 @@ public class Display {
 
     // feature 2 select your shuttle
     public void displaySelectShuttle() {
-        displayLogOutX();
         System.out.println("\n\n\n\n\n");
         System.out.println("       Select Your Shuttle");
         System.out.println("\n\n\n\n\n\n\n");
@@ -393,7 +346,6 @@ public class Display {
 
     // feature 2 enter shuttle ID
     public void enterShuttleID() {
-        displayLogOutX();
         System.out.println("\n\n");
         System.out.println("   *** Shuttle Selection ***");
         System.out.println("\n\n");
@@ -406,7 +358,6 @@ public class Display {
 
     // feature 2 selected shuttle info
     public void selectedShuttle(int id, String name, int year, String fuel, String payload, String speed) {
-        displayLogOutX();
         System.out.println("\n\n");
         System.out.println("   *** Selected Shuttle ***");
         System.out.println("\n\n");
@@ -421,7 +372,6 @@ public class Display {
 
     // feature 2 shuttle not exist
     public void displayShuttleNotExist(int id) {
-        displayLogOutX();
         System.out.println("\n\n\n\n\n");
         System.out.println("                 ***");
         System.out.println("Sorry, Shuttle " + id + " does not exist.");
@@ -432,7 +382,6 @@ public class Display {
 
     // feature 2 Successfully selected shuttle
     public void displaySuccessfullySelectedShuttle(String id) {
-        displayLogOutX();
         System.out.println("\n\n");
         System.out.println("Successfully selected Shuttle " + id + " !");
         System.out.println("\n\n");
@@ -450,13 +399,12 @@ public class Display {
 
     // feature 2 run through all shuttles
     public void displayEndShutte() {
-        displayLogOutX();
         System.out.println("\n\n\n\n\n");
         System.out.println("                 ***");
         System.out.println("You have run through all the shuttles.");
         System.out.println("                 ***");
         System.out.println("\n\n\n\n\n");
-        enterToContinue();
+        displayContinue();
     }
 
     // feature 3 create selection criteria

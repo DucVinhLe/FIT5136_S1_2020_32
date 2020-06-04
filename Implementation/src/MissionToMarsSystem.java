@@ -13,18 +13,13 @@ public class MissionToMarsSystem {
         User user1 = new User();
         system.login(user1);
 
-        System.out.print(user1.getUserId() + " ");
-        System.out.print(user1.getName() + " ");
-        System.out.print(user1.getType() + " ");
-        System.out.print(user1.getContact() + " ");
-        System.out.println();
-
-        boolean shutdown = false;
-        int operation = 0;
+        while (true) {
+            system.selectOperation(user1);
+        }
 
     }
 
-    // user login function, include password validation
+    // system login function, include user password validation
     public void login(User user) {
         Display screen = new Display();
         boolean success = false;
@@ -80,6 +75,14 @@ public class MissionToMarsSystem {
                     screen.goBack();
                     input = scanner.next();
                 }
+            } else {
+                screen.displayContinue();
+                String input = scanner.next();
+                // input validation
+                while (!input.equals("N")) {
+                    screen.displayContinue();
+                    input = scanner.next();
+                }
             }
 
         }
@@ -87,7 +90,24 @@ public class MissionToMarsSystem {
     }
 
     public int selectOperation(User user) {
+        Display screen = new Display();
+        Scanner scanner = new Scanner(System.in);
         int operation = 0;
+        if (user.getType().equals("Administrator")) {
+
+        } else if (user.getType().equals("Coordinator")) {
+
+        } else {
+            screen.displayOperationCandidate();
+            String input = scanner.next();
+            // input validation
+            while (!input.equals("1")) {
+                screen.displayOperationValid();
+                input = scanner.next();
+            }
+            user.logOut();
+        }
+
         return operation;
     }
 

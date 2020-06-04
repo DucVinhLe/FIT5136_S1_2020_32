@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class User {
     private int userId;
@@ -71,6 +72,24 @@ public class User {
         this.username = username;
         this.password = password;
         this.contact = contact;
+    }
+
+    public void logOut() {
+        Display screen = new Display();
+        screen.displayLogOut();
+
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.next();
+        // input validation
+        while (!(input.equals("N") || input.equals("Y"))) {
+            screen.displayLogOutConfirmation();
+            input = scanner.next();
+        }
+
+        if (input.equals("Y")) {
+            screen.displayLogOutSuccessful();
+            System.exit(0);
+        }
     }
 
 }
