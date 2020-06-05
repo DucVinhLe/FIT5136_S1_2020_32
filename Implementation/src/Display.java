@@ -243,5 +243,10 @@ public class Display {
         System.out.println("               ^^ ^^");
         System.out.println("              !!! !!!");
     }
+    
+    // feature 3 create criteria
+    public void displayCriteria() {
+        
+    }
 
 }
