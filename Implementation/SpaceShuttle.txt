@@ -1,0 +1,6 @@
+shuttleId, name, manufacture, Year, fuel_capacity, passenger capacity, cargo capacity, travel speed, origin
+770,    dapibus gravida,	04/17/2014,	922124065,	249,	1203,	34676,	United Kingdom
+775,	tristique neque,	09/16/2012,	604094652,	277,	1697,	30552,	Russian Federation
+780,	magna a,		01/24/2010,	3365269,	260,	779,	30930,	India
+
+

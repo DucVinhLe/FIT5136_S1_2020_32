@@ -35,6 +35,10 @@ public class SpaceShuttle {
             this.speed = speed;
         }
 
+        public void selectSpaceShuttle(){
+
+        }
+
         public void setShuttleId ( int shuttleId){
             this.shuttleId = shuttleId;
         }
