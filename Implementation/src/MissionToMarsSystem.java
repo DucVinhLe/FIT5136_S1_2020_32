@@ -1,5 +1,7 @@
+import javax.swing.*;
 import java.io.*;
 import java.lang.reflect.Array;
+import java.security.spec.DSAGenParameterSpec;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -9,7 +11,7 @@ public class MissionToMarsSystem {
 
     }
 
-    public static void main(String args[]) {
+    public static void main(String args[]) throws IOException {
         MissionToMarsSystem system = new MissionToMarsSystem();
         User user1 = new User();
         system.login(user1);
@@ -93,7 +95,7 @@ public class MissionToMarsSystem {
 
     }
 
-    public int selectOperation(MissionToMarsSystem system, User user) {
+    public int selectOperation(MissionToMarsSystem system, User user) throws IOException {
         Display screen = new Display();
         Scanner scanner = new Scanner(System.in);
         int operation = 0;
@@ -108,7 +110,7 @@ public class MissionToMarsSystem {
             if (input.equals("1")) {
                 user.selectSpaceShuttle();
             } else if (input.equals("2")) {
-                // system.createCriteria(user);
+                 system.createCriteria(user);
             } else if (input.equals("3")) {
                 user.selectCandidates(user);
             } else {
@@ -240,5 +242,46 @@ public class MissionToMarsSystem {
         }
     }
 
+
+    public void createCriteria(User user) throws IOException {
+        Display displayCriteria = new Display();
+        String[] criteriaType= new String[10];
+        String[] criteriaInformation=new String[10];
+        boolean invalid = true;
+        int i=0;
+        while(invalid){
+            Scanner input = new Scanner(System.in);
+                System.out.print("Criteria Type: ");
+                criteriaType[i] = input.nextLine();
+                System.out.print("Criteria Information: ");
+                criteriaInformation[i] = input.nextLine();
+                if ((criteriaInformation[i].trim().isBlank() || criteriaType[i].trim().isBlank()) == true){
+                    System.out.println("Invalid information");
+                    System.out.println(" ");
+                }else{
+                    displayCriteria.displayCriteria(criteriaType[i],criteriaInformation[i]);
+                    boolean check = false;
+                    while (!check) {
+                        System.out.print("Enter your choice: ");
+                        String choice = input.nextLine();
+                        switch (choice){
+                            case "1":
+                                for (int j = 0; j <=i;j++){
+                                    Criteria newCriteria = new Criteria(criteriaType[j],criteriaInformation[j]);
+                                    user.createCriteria(newCriteria);
+                                    displayCriteria.displayConfirmCriteria();
+                                }
+                                invalid= false;
+                                check = true;
+                                break;
+                            case "2": i = i+1;
+                                    check=true;
+                                    break;
+                            default: System.out.println("Please make right choice");
+                        }
+                    }
+                }
+            }
+        }
 
 }

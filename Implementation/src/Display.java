@@ -245,8 +245,18 @@ public class Display {
     }
     
     // feature 3 create criteria
-    public void displayCriteria() {
-        
-    }
+    public void displayCriteria(String criteriaName, String criteriaInformation) {
+        System.out.println("*******New Criteria********");
+        System.out.println("Criteria Name: "+ criteriaName);
+        System.out.println("Criteria Information: "+ criteriaInformation);
+        System.out.println(" 1. Confirm criteria. \n 2. Create new criteria. ");
 
+    }
+    public void displayConfirmCriteria(){
+        System.out.println();
+        System.out.println("                ***");
+        System.out.println("        NEW CRITERIA CREATED");
+        System.out.println("                ***");
+        System.out.println();
+    }
 }
