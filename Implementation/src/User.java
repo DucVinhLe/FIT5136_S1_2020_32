@@ -16,7 +16,7 @@ public class User {
     }
 
     public static void main(String[] args) {
-
+        selectCandidates();
 
     }
 
@@ -119,7 +119,7 @@ public class User {
         buff.close();
     }
 
-    public void selectCandidates(User user) {
+    public static void selectCandidates() {
         String[] info = new String[8];
         String[] single1 = new String[1];
         try {
@@ -176,9 +176,26 @@ public class User {
                 candidate8.setIdentificationNumber(single8[0]);
                 candidate8.setName(single8[1]);*/
                 System.out.println("The selected candidates are: \n" + info[0] + "\n" + info[1] + "\n" + info[2] + "\n" + info[3] + "\n" + info[4]);
-                System.out.println(info[1]+" has refused the invitation" + "\n" + "the next candidate will be informed");;
-                System.out.println("all the candidates has accepted the invitation");
+                System.out.println("Press N to continue.");
+                Scanner scanner = new Scanner(System.in);
+                String temp = scanner.nextLine();
+                while (!temp.equals("N")) {
+                    System.out.println("Press N to continue.");
+                    temp = scanner.nextLine();
+                }
+                System.out.println(info[1]+" has refused the invitation" + "\n" + "the next candidate will be informed");
+                /* Scanner scanner = new Scanner(System.in);
+                String temp = scanner.nextLine();
+                if (temp.equals("N"))
+                System.out.println(info[1]+" has refused the invitation" + "\n" + "the next candidate will be informed");
+                System.out.println("Press N to continue.");
+                temp = scanner.nextLine();
+                if (temp.equals("N"))
                 System.out.println("The selected candidates are: \n" + info[0] + "\n" + info[2] + "\n" + info[3] + "\n" + info[4] + "\n" + info[5]);
+                System.out.println("Press N to continue.");
+                temp = scanner.nextLine();
+                if (temp.equals("N"))
+                System.out.println("all the candidates has accepted the invitation");*/
             } catch (IOException e) {
                 e.printStackTrace();
             }
