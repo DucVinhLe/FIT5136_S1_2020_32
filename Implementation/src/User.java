@@ -17,6 +17,7 @@ public class User {
 
     public static void main(String[] args) {
 
+
     }
 
 
@@ -118,7 +119,7 @@ public class User {
         buff.close();
     }
 
-    public static void selectCandidate() {
+    public void selectCandidates(User user) {
         String[] info = new String[8];
         String[] single1 = new String[1];
         try {
@@ -133,9 +134,9 @@ public class User {
                     line = br.readLine();
                 }
                String everything = sb.toString();
-                System.out.println(everything);
+                //System.out.println(everything);
                 info = everything.split("\\R");
-                single1 = info[0].split(" ");
+                /*single1 = info[0].split(" ");
                 Candidate candidate1 = new Candidate();
                 candidate1.setIdentificationNumber(single1[0]);
                 candidate1.setName(single1[1]);
@@ -173,7 +174,7 @@ public class User {
                 single8 = info[7].split(" ");
                 Candidate candidate8 = new Candidate();
                 candidate8.setIdentificationNumber(single8[0]);
-                candidate8.setName(single8[1]);
+                candidate8.setName(single8[1]);*/
                 System.out.println("The selected candidates are: \n" + info[0] + "\n" + info[1] + "\n" + info[2] + "\n" + info[3] + "\n" + info[4]);
                 System.out.println(info[1]+" has refused the invitation" + "\n" + "the next candidate will be informed");;
                 System.out.println("all the candidates has accepted the invitation");

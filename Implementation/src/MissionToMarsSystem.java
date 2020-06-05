@@ -106,7 +106,7 @@ public class MissionToMarsSystem {
             } else if (input.equals("2")) {
                 // system.createCriteria(user);
             } else if (input.equals("3")) {
-                // system.selectCandidates(user);
+                user.selectCandidates(user);
             } else {
                 user.logOut();
             }
