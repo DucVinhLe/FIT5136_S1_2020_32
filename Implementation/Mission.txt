@@ -12,17 +12,3 @@ Employment Requirements: 4 students
 Cargo Requirements: None
 Coordinator InformationYiwei, email: xxxxxx
 
-*******************************************
-Mission Name: mission1
-Mission Description: test1
-Country of Origin: test
-Countries Allowed : Australia
-Mission Status : Landed on Mars
-Launch Date : 
-Mission Location: rtst
-Mission Duration: set
-Job Information : afd
-Employment Requirements: ad
-Cargo Requirements: adf
-Coordinator Informationafsdaf
-

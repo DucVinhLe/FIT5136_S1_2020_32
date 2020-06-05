@@ -115,7 +115,7 @@ public class User {
         buff.write("Job Information : " + mission.getJobInfo() + "\n");
         buff.write("Employment Requirements: " + mission.getEmploymentRequirements() + "\n");
         buff.write("Cargo Requirements: " + mission.getCargoRequirements() + "\n");
-        buff.write("Coordinator Information" + mission.getCoordinatorInfo() + "\n\n");
+        buff.write("Coordinator Information: " + mission.getCoordinatorInfo() + "\n\n");
         buff.close();
     }
 
