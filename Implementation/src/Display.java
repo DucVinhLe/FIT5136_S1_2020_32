@@ -198,27 +198,27 @@ public class Display {
         System.out.println("   *** Shuttle Selection ***");
         System.out.println();
         System.out.println("Enter your preferred shuttle ID:");
-        System.out.println(" ");
-        System.out.println("Or press enter to look up all the shuttles");
-        System.out.println();
-        goBack();
+        //goBack();
     }
 
     // feature 2 selected shuttle info
-    public void selectedShuttle(int id, String name, int year, String fuel, String payload, String speed) {
-        System.out.println("\n\n");
+    public void selectedShuttle(String id, String name, String year, String fuel,String passengerCapacity,String payload, String speed,String origin ) {
+        /*System.out.println("\n\n");
         System.out.println("   *** Selected Shuttle ***");
-        System.out.println("\n\n");
+        System.out.println("\n\n");*/
         System.out.println("ID: " + id);
         System.out.println("Name: " + name);
         System.out.println("Year: " + year);
         System.out.println("Fuel: " + fuel);
-        System.out.println("Speed: " + speed);
+        System.out.println("Passenger Capacity: " + passengerCapacity);
         System.out.println("Payload: " + payload);
+        System.out.println("Speed: " + speed);
+        System.out.println("Origin: "+ origin);
+
     }
 
     // feature 2 shuttle not exist
-    public void displayShuttleNotExist(int id) {
+    public void displayShuttleNotExist(String id) {
         System.out.println();
         System.out.println("                 ***");
         System.out.println("Sorry, Shuttle " + id + " does not exist.");
