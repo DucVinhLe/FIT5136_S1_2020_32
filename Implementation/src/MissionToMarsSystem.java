@@ -16,8 +16,6 @@ public class MissionToMarsSystem {
 
         while (true) {
             int userChoice = system.selectOperation(system, user1); // Variable userChoice
-           // system.selectSpaceShuttle();
-
         }
 
 
@@ -108,7 +106,7 @@ public class MissionToMarsSystem {
                 input = scanner.next();
             }
             if (input.equals("1")) {
-                // system.selectSpaceShuttle(user);
+                user.selectSpaceShuttle();
             } else if (input.equals("2")) {
                 // system.createCriteria(user);
             } else if (input.equals("3")) {
@@ -242,42 +240,5 @@ public class MissionToMarsSystem {
         }
     }
 
-    // selectSpaceShuttle Method
-    public void selectSpaceShuttle(User user){
-        ArrayList<String> spaceInfo = new ArrayList<>();
-        Display displaySpaceShuttle = new Display();
-        String[] spaceShuttle = {};
-        try{
-            File spaceShuttleFile = new File("SpaceShuttle.txt");
-            BufferedReader buff = new BufferedReader(new FileReader(spaceShuttleFile));
-            String str;
-            while ((str = buff.readLine()) != null) {
-                String temp = str.trim();
-                spaceInfo.add(temp);
-            }
-            spaceInfo.remove(0); // remove the first row
-            buff.close();
-        }
-        catch (FileNotFoundException e){
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        finally {
-            System.out.println("***Space Shuttle information***");
-            for (int i =0;i<spaceInfo.size();i++){
-                spaceShuttle = spaceInfo.get(i).split(",",0);
-                System.out.println("**********");
-                for (String a: spaceShuttle){
-                    System.out.println(a.trim());
-                }
-            }
-        }
-        boolean selection = false;
-        while (!selection){
-            displaySpaceShuttle.enterShuttleID();
-            Scanner input = new Scanner(System.in);
-            int id = input.nextInt();
-        }
-    }
+
 }

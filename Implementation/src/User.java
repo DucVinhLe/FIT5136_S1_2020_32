@@ -115,7 +115,7 @@ public class User {
         buff.write("Job Information : " + mission.getJobInfo() + "\n");
         buff.write("Employment Requirements: " + mission.getEmploymentRequirements() + "\n");
         buff.write("Cargo Requirements: " + mission.getCargoRequirements() + "\n");
-        buff.write("Coordinator Information" + mission.getCoordinatorInfo() + "\n\n");
+        buff.write("Coordinator Information: " + mission.getCoordinatorInfo() + "\n\n");
         buff.close();
     }
 
@@ -185,7 +185,65 @@ public class User {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+    }
 
+    // selectSpaceShuttle Method
+    public void selectSpaceShuttle(){
+        ArrayList<String> spaceInfo = new ArrayList<>();
+        Display displaySpaceShuttle = new Display();
+        String[] spaceShuttle = {};
+        try{
+            File spaceShuttleFile = new File("SpaceShuttle.txt");
+            BufferedReader buff = new BufferedReader(new FileReader(spaceShuttleFile));
+            String str;
+            while ((str = buff.readLine()) != null) {
+                String temp = str.trim();
+                spaceInfo.add(temp);
+            }
+            spaceInfo.remove(0); // remove the first row
+            buff.close();
+        }
+        catch (FileNotFoundException e){
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        finally {
+            System.out.println("***Space Shuttle information***");
+            for (int i =0;i<spaceInfo.size();i++){
+                spaceShuttle = spaceInfo.get(i).split(",",0);
+                System.out.println("**********");
+                displaySpaceShuttle.selectedShuttle(spaceShuttle[0].trim(),spaceShuttle[1].trim(),spaceShuttle[2].trim(),spaceShuttle[3].trim(),spaceShuttle[4].trim()
+                                                    ,spaceShuttle[5].trim(),spaceShuttle[6].trim(),spaceShuttle[7].trim());
+            }
+        }
+        boolean selection = false;
+        while (!selection){
+            displaySpaceShuttle.enterShuttleID();
+            Scanner input = new Scanner(System.in);
+            String id = input.nextLine();
+            int count =0;
+            for (int i =0; i<spaceInfo.size();i++){
+                try{
+                    spaceShuttle = spaceInfo.get(i).split(",");
+                    String spaceShuttleId = spaceShuttle[0];
+                    if (id.equals(spaceShuttleId)){
+                        count +=1;
+                        selection = true;
+                        System.out.println("***Selected SpaceShuttle***");
+                        for (String a: spaceShuttle){
+                            System.out.println(a.trim());
+                        }
+                        displaySpaceShuttle.displaySuccessfullySelectedShuttle(id);
+                    }
+                }catch (NumberFormatException e){
+                    e.printStackTrace();
+                }
+            }
+            if (count ==0){
+                displaySpaceShuttle.displayShuttleNotExist(id);
+            }
+        }
     }
 }
 
