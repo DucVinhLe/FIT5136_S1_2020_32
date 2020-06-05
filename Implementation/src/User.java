@@ -1,5 +1,11 @@
 import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 import java.util.spi.CalendarDataProvider;
 
@@ -16,7 +22,6 @@ public class User {
     }
 
     public static void main(String[] args) {
-        selectCandidates();
 
     }
 
@@ -120,6 +125,7 @@ public class User {
     }
 
     public static void selectCandidates() {
+        Display display = new Display();
         String[] info = new String[8];
         String[] single1 = new String[1];
         try {
@@ -175,27 +181,33 @@ public class User {
                 Candidate candidate8 = new Candidate();
                 candidate8.setIdentificationNumber(single8[0]);
                 candidate8.setName(single8[1]);*/
-                System.out.println("The selected candidates are: \n" + info[0] + "\n" + info[1] + "\n" + info[2] + "\n" + info[3] + "\n" + info[4]);
-                System.out.println("Press N to continue.");
+                display.displayCandidates(info[0],info[1],info[2],info[3],info[4]);
+                display.displayContinue();
                 Scanner scanner = new Scanner(System.in);
                 String temp = scanner.nextLine();
                 while (!temp.equals("N")) {
-                    System.out.println("Press N to continue.");
+                    display.displayContinue();
                     temp = scanner.nextLine();
                 }
-                System.out.println(info[1]+" has refused the invitation" + "\n" + "the next candidate will be informed");
-                /* Scanner scanner = new Scanner(System.in);
-                String temp = scanner.nextLine();
-                if (temp.equals("N"))
-                System.out.println(info[1]+" has refused the invitation" + "\n" + "the next candidate will be informed");
-                System.out.println("Press N to continue.");
+                display.displayCandidateRefuse(info[1]);
+                display.displayContinue();
                 temp = scanner.nextLine();
-                if (temp.equals("N"))
-                System.out.println("The selected candidates are: \n" + info[0] + "\n" + info[2] + "\n" + info[3] + "\n" + info[4] + "\n" + info[5]);
-                System.out.println("Press N to continue.");
+                while (!temp.equals("N")) {
+                    display.displayContinue();
+                    temp = scanner.nextLine();
+                }
+                display.displayCandidates(info[0],info[2],info[3],info[4],info[5]);
+                display.displayContinue();
                 temp = scanner.nextLine();
-                if (temp.equals("N"))
-                System.out.println("all the candidates has accepted the invitation");*/
+                while (!temp.equals("N")) {
+                    display.displayContinue();
+                    temp = scanner.nextLine();
+                }
+                display.displayCandidateAccept();
+                //write to file
+                List<String> lines = Arrays.asList("The selected candidates are:",info[0],info[2],info[3],info[4],info[5]);
+                Path file = Paths.get("selectedCandidates.txt");
+                Files.write(file, lines, StandardCharsets.UTF_8);
             } catch (IOException e) {
                 e.printStackTrace();
             }

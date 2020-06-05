@@ -249,4 +249,21 @@ public class Display {
         
     }
 
+
+    // feature 4 select candidates
+
+    //display selected candidates
+    public void displayCandidates(String...strings){
+        System.out.println("The selected candidates are: \n" + strings[0] + "\n" + strings[1] + "\n" + strings[2] + "\n" + strings[3] + "\n" + strings[4]);
+    }
+
+    //display candidate refused
+    public void displayCandidateRefuse(String...strings){
+        System.out.println(strings[0]+" has refused the invitation" + "\n" + "The next candidate will be informed");
+    }
+
+    //display candidate accept
+    public void displayCandidateAccept(String...strings){
+        System.out.println("Congratulations! All the candidates has accepted the invitation");
+    }
 }
