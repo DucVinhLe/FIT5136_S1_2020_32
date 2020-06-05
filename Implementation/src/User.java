@@ -274,6 +274,18 @@ public class User {
             }
         }
     }
+
+    public void createCriteria(Criteria criteria) throws IOException {
+        File f = new File("Criteria.txt");
+        if(!f.exists()){
+            f.createNewFile();
+        }
+        FileWriter buff = new FileWriter(f.getName(), true);
+        buff.write("*******************************************\n");
+        buff.write("Criteria Type: " + criteria.getType() + "\n");
+        buff.write("Criteria Information:"+ criteria.getInformation() + "\n\n");
+        buff.close();
+    }
 }
 
 
