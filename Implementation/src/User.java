@@ -140,55 +140,29 @@ public class User {
                     line = br.readLine();
                 }
                String everything = sb.toString();
-                //System.out.println(everything);
                 info = everything.split("\\R");
-                /*single1 = info[0].split(" ");
-                Candidate candidate1 = new Candidate();
-                candidate1.setIdentificationNumber(single1[0]);
-                candidate1.setName(single1[1]);
-                String[] single2 = new String[1];
-                single2 = info[1].split(" ");
-                Candidate candidate2 = new Candidate();
-                candidate2.setIdentificationNumber(single2[0]);
-                candidate2.setName(single2[1]);
-                String[] single3 = new String[1];
-                single3 = info[2].split(" ");
-                Candidate candidate3 = new Candidate();
-                candidate3.setIdentificationNumber(single3[0]);
-                candidate3.setName(single3[1]);
-                String[] single4 = new String[1];
-                single4 = info[3].split(" ");
-                Candidate candidate4 = new Candidate();
-                candidate4.setIdentificationNumber(single4[0]);
-                candidate4.setName(single4[1]);
-                String[] single5 = new String[1];
-                single5 = info[4].split(" ");
-                Candidate candidate5 = new Candidate();
-                candidate5.setIdentificationNumber(single5[0]);
-                candidate5.setName(single5[1]);
-                String[] single6 = new String[1];
-                single6 = info[5].split(" ");
-                Candidate candidate6 = new Candidate();
-                candidate6.setIdentificationNumber(single6[0]);
-                candidate6.setName(single6[1]);
-                String[] single7 = new String[1];
-                single7 = info[6].split(" ");
-                Candidate candidate7 = new Candidate();
-                candidate7.setIdentificationNumber(single7[0]);
-                candidate7.setName(single7[1]);
-                String[] single8 = new String[1];
-                single8 = info[7].split(" ");
-                Candidate candidate8 = new Candidate();
-                candidate8.setIdentificationNumber(single8[0]);
-                candidate8.setName(single8[1]);*/
+
+                display.displaySelectCandidates();
                 display.displayCandidates(info[0],info[1],info[2],info[3],info[4]);
+                display.displaySendInvitation();
                 display.displayContinue();
+
                 Scanner scanner = new Scanner(System.in);
-                String temp = scanner.nextLine();
+                String temp;
+
+                temp = scanner.nextLine();
                 while (!temp.equals("N")) {
                     display.displayContinue();
                     temp = scanner.nextLine();
                 }
+
+                display.displaySent();
+                temp = scanner.nextLine();
+                while (!temp.equals("N")) {
+                    display.displayContinue();
+                    temp = scanner.nextLine();
+                }
+
                 display.displayCandidateRefuse(info[1]);
                 display.displayContinue();
                 temp = scanner.nextLine();
@@ -196,18 +170,29 @@ public class User {
                     display.displayContinue();
                     temp = scanner.nextLine();
                 }
+
+                display.displaySent();
+                temp = scanner.nextLine();
+                while (!temp.equals("N")) {
+                    display.displayContinue();
+                    temp = scanner.nextLine();
+                }
+
+
+                display.displayCandidateAccept();
                 display.displayCandidates(info[0],info[2],info[3],info[4],info[5]);
+                //write to file
+                List<String> lines = Arrays.asList("The selected candidates are:",info[0],info[5],info[2],info[3],info[4]);
+                Path file = Paths.get("selectedCandidates.txt");
+                Files.write(file, lines, StandardCharsets.UTF_8);
+
                 display.displayContinue();
                 temp = scanner.nextLine();
                 while (!temp.equals("N")) {
                     display.displayContinue();
                     temp = scanner.nextLine();
                 }
-                display.displayCandidateAccept();
-                //write to file
-                List<String> lines = Arrays.asList("The selected candidates are:",info[0],info[2],info[3],info[4],info[5]);
-                Path file = Paths.get("selectedCandidates.txt");
-                Files.write(file, lines, StandardCharsets.UTF_8);
+
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -238,7 +223,7 @@ public class User {
             e.printStackTrace();
         }
         finally {
-            System.out.println("***Space Shuttle information***");
+            System.out.println("***Space Shuttle Information***");
             for (int i =0;i<spaceInfo.size();i++){
                 spaceShuttle = spaceInfo.get(i).split(",",0);
                 System.out.println("**********");
@@ -259,11 +244,16 @@ public class User {
                     if (id.equals(spaceShuttleId)){
                         count +=1;
                         selection = true;
-                        System.out.println("***Selected SpaceShuttle***");
-                        for (String a: spaceShuttle){
-                            System.out.println(a.trim());
-                        }
+                        displaySpaceShuttle.selectedShuttle(spaceShuttle[0].trim(),spaceShuttle[1].trim(),spaceShuttle[2].trim(),spaceShuttle[3].trim(),spaceShuttle[4].trim()
+                                ,spaceShuttle[5].trim(),spaceShuttle[6].trim(),spaceShuttle[7].trim());
                         displaySpaceShuttle.displaySuccessfullySelectedShuttle(id);
+                        displaySpaceShuttle.displayContinue();
+                        String input1 = input.next();
+                        // input validation
+                        while (!input1.equals("N")) {
+                            displaySpaceShuttle.displayValidInput();
+                            input1 = input.next();
+                        }
                     }
                 }catch (NumberFormatException e){
                     e.printStackTrace();

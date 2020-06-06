@@ -131,6 +131,18 @@ public class Display {
         System.out.print("Mission name: ");
     }
 
+    public void displayNotEmpty() {
+        System.out.print("The input cannot be empty, please input again: ");
+    }
+
+    public void displayDescriptionShort() {
+        System.out.print("The input needs to be at least 10 words long, please enter again:\n");
+    }
+
+    public void displayDurationYears() {
+        System.out.print("The input needs to be a number (years), please input again: ");
+    }
+
     public void missionDescription() {
         System.out.print("Description: ");
     }
@@ -163,7 +175,7 @@ public class Display {
     }
 
     public void displayDuration() {
-        System.out.print("Duration of the mission: ");
+        System.out.print("Duration of the mission (years): ");
     }
 
     public void displayJob() {
@@ -198,14 +210,10 @@ public class Display {
         System.out.println("   *** Shuttle Selection ***");
         System.out.println();
         System.out.println("Enter your preferred shuttle ID:");
-        //goBack();
     }
 
     // feature 2 selected shuttle info
     public void selectedShuttle(String id, String name, String year, String fuel,String passengerCapacity,String payload, String speed,String origin ) {
-        /*System.out.println("\n\n");
-        System.out.println("   *** Selected Shuttle ***");
-        System.out.println("\n\n");*/
         System.out.println("ID: " + id);
         System.out.println("Name: " + name);
         System.out.println("Year: " + year);
@@ -214,24 +222,20 @@ public class Display {
         System.out.println("Payload: " + payload);
         System.out.println("Speed: " + speed);
         System.out.println("Origin: "+ origin);
-
     }
 
     // feature 2 shuttle not exist
     public void displayShuttleNotExist(String id) {
-        System.out.println();
         System.out.println("                 ***");
         System.out.println("Sorry, Shuttle " + id + " does not exist.");
         System.out.println("                 ***");
-        System.out.println();
-        goBack();
     }
 
     // feature 2 Successfully selected shuttle
     public void displaySuccessfullySelectedShuttle(String id) {
-        System.out.println("\n\n");
+        System.out.println();
         System.out.println("Successfully selected Shuttle " + id + " !");
-        System.out.println("\n\n");
+        System.out.println();
         System.out.println("                /\\      ");
         System.out.println("              -/  \\-");
         System.out.println("              [ (M) ]");
@@ -252,18 +256,35 @@ public class Display {
 
     // feature 4 select candidates
 
+    public void displaySelectCandidates() {
+        System.out.println();
+        System.out.println("   *** Select Candidates ***");
+        System.out.println();
+    }
+
     //display selected candidates
     public void displayCandidates(String...strings){
         System.out.println("The selected candidates are: \n" + strings[0] + "\n" + strings[1] + "\n" + strings[2] + "\n" + strings[3] + "\n" + strings[4]);
     }
 
+    // display send invitation message
+    public void displaySendInvitation() {
+        System.out.println("\nNow the system will send an invitation to them automatically\n");
+    }
+
+    // display invitation sent message
+    public void displaySent() {
+        System.out.println("The invitations have been sent successfully, press N to view their feedback: ");
+    }
+
     //display candidate refused
     public void displayCandidateRefuse(String...strings){
-        System.out.println(strings[0]+" has refused the invitation" + "\n" + "The next candidate will be informed");
+        System.out.println(strings[0]+" has refused the invitation\n" + "The system will now send invitation to the replacement candidates");
     }
 
     //display candidate accept
     public void displayCandidateAccept(String...strings){
-        System.out.println("Congratulations! All the candidates has accepted the invitation");
+        System.out.println("Congratulations! All the candidates accepted the invitation");
+        System.out.println("Now the system will generate the selected candidates list\n");
     }
 }

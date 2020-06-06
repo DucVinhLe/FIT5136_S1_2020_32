@@ -1,5 +1,4 @@
 import java.io.*;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -110,7 +109,7 @@ public class MissionToMarsSystem {
             } else if (input.equals("2")) {
                 // system.createCriteria(user);
             } else if (input.equals("3")) {
-                //user.selectCandidates(user);
+                user.selectCandidates();
             } else {
                 user.logOut();
             }
@@ -161,25 +160,68 @@ public class MissionToMarsSystem {
 
         screen.missionInfo();
         name = scanner.nextLine();
+        while (name.equals("")) {
+            screen.displayNotEmpty();
+            name = scanner.nextLine();
+        }
         mission1.setName(name);
 
         screen.missionDescription();
         description = scanner.nextLine();
+        while (description.equals("")) {
+            screen.displayNotEmpty();
+            description = scanner.nextLine();
+        }
+
+        // calculate how many words are in the description
+        int cnt = 0;
+        screen.displayDescriptionShort();
+        description = scanner.nextLine();
+        cnt = 0;
+        for (int i = 0; i < description.length(); i++) {
+            char c = description.charAt(i);
+            if (c ==' ') {
+                cnt ++;
+            }
+        }
+        while (cnt < 9) {
+            screen.displayDescriptionShort();
+            description = scanner.nextLine();
+            cnt = 0;
+            for (int i = 0; i < description.length(); i++) {
+                char c = description.charAt(i);
+                if (c ==' ') {
+                    cnt ++;
+                }
+            }
+        }
         mission1.setDescription(description);
 
         screen.missionCountryAllowed();
         countriesAllowed = scanner.nextLine();
+        while (countriesAllowed.equals("")) {
+            screen.displayNotEmpty();
+            countriesAllowed = scanner.nextLine();
+        }
         mission1.setCountriesAllowed(countriesAllowed);
 
         screen.missionCountryOrigin();
         countryOfOrigin = scanner.nextLine();
+        while (countryOfOrigin.equals("")) {
+            screen.displayNotEmpty();
+            countryOfOrigin = scanner.nextLine();
+        }
         mission1.setCountryOfOrigin(countryOfOrigin);
 
         screen.missionStatus();
         status = scanner.nextLine();
+        while (status.equals("")) {
+            screen.displayNotEmpty();
+            status = scanner.nextLine();
+        }
         while (!(status.equals("1") || status.equals("2") ||status.equals("3") ||status.equals("4") ||status.equals("5") ||status.equals("6"))) {
             screen.displayValidInput();
-            status = scanner.next();
+            status = scanner.nextLine();
         }
         if (status.equals("1")) {
             mission1.setStatus("Planning phase");
@@ -198,30 +240,62 @@ public class MissionToMarsSystem {
 
         screen.displayLaunchDate();
         launchDate = scanner.nextLine();
+        while (launchDate.equals("")) {
+            screen.displayNotEmpty();
+            launchDate = scanner.nextLine();
+        }
         mission1.setLaunchDate(launchDate);
 
         screen.displayLocation();
         location = scanner.nextLine();
+        while (location.equals("")) {
+            screen.displayNotEmpty();
+           location = scanner.nextLine();
+        }
         mission1.setLocation(location);
 
         screen.displayDuration();
         duration = scanner.nextLine();
+        while (duration.equals("")) {
+            screen.displayNotEmpty();
+            duration = scanner.nextLine();
+        }
+        while (!isNumeric(duration)) {
+            screen.displayDurationYears();
+            duration = scanner.nextLine();
+        }
         mission1.setDuration(duration);
 
         screen.displayJob();
         jobInfo = scanner.nextLine();
+        while (jobInfo.equals("")) {
+            screen.displayNotEmpty();
+            jobInfo = scanner.nextLine();
+        }
         mission1.setJobInfo(jobInfo);
 
         screen.displayEmployment();
         employment = scanner.nextLine();
+        while (employment.equals("")) {
+            screen.displayNotEmpty();
+            employment = scanner.nextLine();
+        }
         mission1.setEmploymentRequirements(employment);
 
         screen.displayCargoRequirements();
         cargoRequirements = scanner.nextLine();
+        while (cargoRequirements.equals("")) {
+            screen.displayNotEmpty();
+            cargoRequirements = scanner.nextLine();
+        }
         mission1.setCargoRequirements(cargoRequirements);
 
         screen.displayCoordinator();
         coordinatorInfo = scanner.nextLine();
+        while (coordinatorInfo.equals("")) {
+            screen.displayNotEmpty();
+            coordinatorInfo = scanner.nextLine();
+        }
         mission1.setCoordinatorInfo(coordinatorInfo);
 
         try {
@@ -238,6 +312,17 @@ public class MissionToMarsSystem {
             screen.displayValidInput();
             input = scanner.next();
         }
+    }
+
+    // The method is retrieved from internet
+    // Check whether a String is a number
+    private boolean isNumeric(String str) {
+        for (int i = str.length();--i>=0;){
+            if (!Character.isDigit(str.charAt(i))){
+                return false;
+            }
+        }
+        return true;
     }
 
 

@@ -11,4 +11,6 @@ Job Information : Student: study
 Employment Requirements: 4 students
 Cargo Requirements: None
 Coordinator InformationYiwei, email: xxxxxx
+*******************************************
+
 
