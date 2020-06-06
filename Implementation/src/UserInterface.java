@@ -1,7 +1,6 @@
 // Author: @Team 32
 
 public class UserInterface {
-
     public UserInterface() { }
 
     public static void main(String[] args) { }
