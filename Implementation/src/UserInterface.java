@@ -54,8 +54,6 @@ public class UserInterface {
         System.out.println();
     }
 
-
-
     // log out successful
     public void displayLogOutSuccessful() {
         System.out.print('\u000C');
@@ -211,7 +209,6 @@ public class UserInterface {
         System.out.println("                ***");
         System.out.println();
     }
-
 
     // feature 2 enter shuttle ID
     public void enterShuttleID() {
