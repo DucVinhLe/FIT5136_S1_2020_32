@@ -61,6 +61,7 @@ public class MissionToMarsSystem {
             }
             // login failed
             if (!success) {
+                System.out.print('\u000C');
                 screen.displayLoginFailed();
                 String input = scanner.next().toUpperCase();
                 // input validation
