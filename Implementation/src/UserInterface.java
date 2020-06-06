@@ -358,4 +358,10 @@ public class UserInterface {
         System.out.println("Press N to continue");
     }
 
+    public static void displayShuttleInfo() {
+        System.out.println("*** Space Shuttle Information ***");
+    }
+    public static void displayStar() {
+        System.out.println("*********************************");
+    }
 }

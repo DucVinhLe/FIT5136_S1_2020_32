@@ -4,18 +4,14 @@ public class Criteria {
     private String type;
     private String information;
 
-    public Criteria() {
-
-    }
+    public Criteria() { }
 
     public Criteria(String type, String information) {
         this.type = type;
         this.information = information;
     }
 
-    public static void main(String args[]) {
-
-    }
+    public static void main(String args[]) { }
 
     public String getType() {
         return this.type;
@@ -32,5 +28,4 @@ public class Criteria {
     public void setInformation(String information) {
         this.information = information;
     }
-
 }

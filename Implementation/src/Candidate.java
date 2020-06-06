@@ -20,9 +20,7 @@ public class Candidate extends User {
         System.out.println("Testing Git Hub");
     }
 
-    public Candidate (){
-
-    }
+    public Candidate (){ }
 
     public void setDateOfBirth(Date dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
@@ -64,8 +62,6 @@ public class Candidate extends User {
         return gender;
     }
 
-
-
     public void setFoodPreference(String foodPreference) {
         this.foodPreference = foodPreference;
     }
@@ -89,7 +85,6 @@ public class Candidate extends User {
     public String getOccupation() {
         return occupation;
     }
-
 
     public String getAllergies() {
         return allergies;
