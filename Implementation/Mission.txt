@@ -1,16 +1,4 @@
-*******************************************
-Mission Name: Mission Impossible
-Mission Description: A mission which is impossible to complete such as get 11 out of 11 of the implementation asst
-Country of Origin: Australia
-Countries Allowed : All countries
-Mission Status : Mission completed
-Launch Date : 6/4
-Mission Location: I don't know
-Mission Duration: 3 weeks
-Job Information : Student: study
-Employment Requirements: 4 students
-Cargo Requirements: None
-Coordinator InformationYiwei, email: xxxxxx
-*******************************************
+
+
 
 

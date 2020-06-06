@@ -8,7 +8,7 @@ public class MissionToMarsSystem {
 
     }
 
-    public static void main(String args[]) {
+    public static void main(String args[]) throws IOException {
         MissionToMarsSystem system = new MissionToMarsSystem();
         User user1 = new User();
         system.login(user1);
@@ -92,7 +92,7 @@ public class MissionToMarsSystem {
 
     }
 
-    public int selectOperation(MissionToMarsSystem system, User user) {
+    public int selectOperation(MissionToMarsSystem system, User user) throws IOException {
         Display screen = new Display();
         Scanner scanner = new Scanner(System.in);
         int operation = 0;
@@ -107,7 +107,7 @@ public class MissionToMarsSystem {
             if (input.equals("1")) {
                 user.selectSpaceShuttle();
             } else if (input.equals("2")) {
-                // system.createCriteria(user);
+                system.createCriteria(user);
             } else if (input.equals("3")) {
                 user.selectCandidates();
             } else {
@@ -140,6 +140,126 @@ public class MissionToMarsSystem {
         return operation;
     }
 
+    public void createCriteria(User user) throws IOException {
+        Display screen = new Display();
+        Scanner scanner = new Scanner(System.in);
+
+        Criteria criteria1 = new Criteria();
+        Criteria criteria2 = new Criteria();
+        Criteria criteria3 = new Criteria();
+        criteria1.setType("Range of Age");
+        criteria2.setType("Health Record");
+        criteria3.setType("Criminal Record");
+
+        String criteriaInfo1;
+        String criteriaInfo2;
+        String criteriaInfo3;
+
+        screen.displayCreateCriteria();
+        criteriaInfo1 = scanner.nextLine();
+        while (criteriaInfo1.equals("")) {
+            screen.displayNotEmpty();
+            criteriaInfo1 = scanner.nextLine();
+        }
+        criteria1.setInformation(criteriaInfo1);
+
+        screen.displayHealthRecord();
+        criteriaInfo2 = scanner.nextLine();
+        while (criteriaInfo2.equals("")) {
+            screen.displayNotEmpty();
+            criteriaInfo2 = scanner.nextLine();
+        }
+        criteria2.setInformation(criteriaInfo2);
+
+        screen.displayCriminalRecord();
+        criteriaInfo3 = scanner.nextLine();
+        while (criteriaInfo3.equals("")) {
+            screen.displayNotEmpty();
+            criteriaInfo3 = scanner.nextLine();
+        }
+        criteria3.setInformation(criteriaInfo3);
+
+        try {
+            user.createCriteria(criteria1);
+            user.createCriteria(criteria2);
+            user.createCriteria(criteria3);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        screen.displayConfirmCriteria();
+        screen.displayContinue();
+        String input = scanner.nextLine();
+        // input validation
+        while (!input.equals("N")) {
+            screen.displayValidInput();
+            input = scanner.next();
+        }
+
+        screen.displaySelectPriority();
+        String input1 = scanner.next();
+        while (!(input1.equals("1") || input1.equals("2") || input1.equals("3"))) {
+            screen.displayValidInput();
+            input1 = scanner.next();
+        }
+        if (input1.equals("1")) {
+            screen.displaySelectedAge();
+        } else if (input1.equals("2")) {
+            screen.displaySelectedHealth();
+        } else {
+            screen.displaySelectedCriminal();
+        }
+
+        screen.displayContinue();
+        input = scanner.next();
+        // input validation
+        while (!input.equals("N")) {
+            screen.displayValidInput();
+            input = scanner.next();
+        }
+
+
+        /*String[] criteriaType= {};
+        String[] criteriaInformation = {};
+        boolean invalid = true;
+        int i = 0;
+
+        while(invalid){
+            Scanner input = new Scanner(System.in);
+            System.out.print("Criteria Type: ");
+            criteriaType[i] = input.nextLine();
+            System.out.print("Criteria Information: ");
+            criteriaInformation[i] = input.nextLine();
+            if ((criteriaInformation[i].trim().isBlank() || criteriaType[i].trim().isBlank()) == true){
+                System.out.println("Invalid information");
+                System.out.println();
+            } else {
+                displayCriteria.displayCriteria(criteriaType[i],criteriaInformation[i]);
+                boolean check = false;
+                while (!check) {
+                    System.out.print("Enter your choice: ");
+                    String choice = input.nextLine();
+                    switch (choice){
+                        case "1":
+                            for (int j = 0; j <=i;j++){
+                                Criteria newCriteria = new Criteria(criteriaType[j],criteriaInformation[j]);
+                                user.createCriteria(newCriteria);
+                                displayCriteria.displayConfirmCriteria();
+                            }
+                            invalid= false;
+                            check = true;
+                            break;
+                        case "2": i = i+1;
+                            check=true;
+                            break;
+                        default: System.out.println("Please make right choice");
+                    }
+                }
+            }
+        }*/
+    }
+
+
     public void createMission(User user) {
         Display screen = new Display();
         Scanner scanner = new Scanner(System.in);
@@ -158,6 +278,7 @@ public class MissionToMarsSystem {
         String cargoRequirements;
         String coordinatorInfo;
 
+        screen.displayCreateMission();
         screen.missionInfo();
         name = scanner.nextLine();
         while (name.equals("")) {
@@ -236,7 +357,6 @@ public class MissionToMarsSystem {
         } else {
             mission1.setStatus("Mission completed");
         }
-
 
         screen.displayLaunchDate();
         launchDate = scanner.nextLine();

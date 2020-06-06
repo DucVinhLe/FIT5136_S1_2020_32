@@ -126,10 +126,9 @@ public class User {
 
     public static void selectCandidates() {
         Display display = new Display();
-        String[] info = new String[8];
-        String[] single1 = new String[1];
+        String[] info;
         try {
-            BufferedReader br = new BufferedReader(new FileReader("candidates.txt"));
+            BufferedReader br = new BufferedReader(new FileReader("Candidates.txt"));
 
             try {
                 StringBuilder sb = new StringBuilder();
@@ -180,13 +179,35 @@ public class User {
 
 
                 display.displayCandidateAccept();
+
+                display.displayContinue();
+                temp = scanner.nextLine();
+                while (!temp.equals("N")) {
+                    display.displayContinue();
+                    temp = scanner.nextLine();
+                }
                 display.displayCandidates(info[0],info[2],info[3],info[4],info[5]);
+
                 //write to file
                 List<String> lines = Arrays.asList("The selected candidates are:",info[0],info[5],info[2],info[3],info[4]);
                 Path file = Paths.get("selectedCandidates.txt");
                 Files.write(file, lines, StandardCharsets.UTF_8);
 
                 display.displayContinue();
+                temp = scanner.nextLine();
+                while (!temp.equals("N")) {
+                    display.displayContinue();
+                    temp = scanner.nextLine();
+                }
+
+                display.displayInform();
+                temp = scanner.nextLine();
+                while (!temp.equals("N")) {
+                    display.displayContinue();
+                    temp = scanner.nextLine();
+                }
+
+                display.displayInformSuccessful();
                 temp = scanner.nextLine();
                 while (!temp.equals("N")) {
                     display.displayContinue();
@@ -244,8 +265,8 @@ public class User {
                     if (id.equals(spaceShuttleId)){
                         count +=1;
                         selection = true;
-                        displaySpaceShuttle.selectedShuttle(spaceShuttle[0].trim(),spaceShuttle[1].trim(),spaceShuttle[2].trim(),spaceShuttle[3].trim(),spaceShuttle[4].trim()
-                                ,spaceShuttle[5].trim(),spaceShuttle[6].trim(),spaceShuttle[7].trim());
+                        // displaySpaceShuttle.selectedShuttle(spaceShuttle[0].trim(),spaceShuttle[1].trim(),spaceShuttle[2].trim(),spaceShuttle[3].trim(),spaceShuttle[4].trim()
+                                //,spaceShuttle[5].trim(),spaceShuttle[6].trim(),spaceShuttle[7].trim());
                         displaySpaceShuttle.displaySuccessfullySelectedShuttle(id);
                         displaySpaceShuttle.displayContinue();
                         String input1 = input.next();
@@ -273,7 +294,7 @@ public class User {
         FileWriter buff = new FileWriter(f.getName(), true);
         buff.write("*******************************************\n");
         buff.write("Criteria Type: " + criteria.getType() + "\n");
-        buff.write("Criteria Information:"+ criteria.getInformation() + "\n\n");
+        buff.write("Criteria Information:"+ criteria.getInformation() + "\n");
         buff.close();
     }
 }

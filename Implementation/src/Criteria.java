@@ -1,8 +1,7 @@
 public class Criteria {
     private String type;
     private String information;
-// comment
-    //comment again...
+
     public Criteria() {
 
     }
@@ -14,21 +13,6 @@ public class Criteria {
 
     public static void main(String args[]) {
 
-  /*      // Test creating Criteria1 using constructor
-        Criteria criteria1 = new Criteria(1, "Range of Age", "18-70");
-        System.out.println("Criteria ID: " + criteria1.getCriteriaId());
-        System.out.println("Criteria Type: " + criteria1.getType());
-        System.out.println("Criteria Information: " + criteria1.getInformation() + "\n");
-
-        // Test creating Criteria2 using mutator
-        Criteria criteria2 = new Criteria();
-        criteria2.setCriteriaId(2);
-        criteria2.setType("Health Record");
-        criteria2.setInformation("Heart Disease, Asthma");
-        System.out.println("Criteria ID: " + criteria2.getCriteriaId());
-        System.out.println("Criteria Type: " + criteria2.getType());
-        System.out.println("Criteria Information: " + criteria2.getInformation());
-*/
     }
 
     public String getType() {

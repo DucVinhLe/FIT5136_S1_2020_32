@@ -72,7 +72,7 @@ public class Display {
         System.out.println();
         System.out.println("*** Operation Selection ***");
         System.out.println();
-        System.out.println("Please select your operation(Administrator):");
+        System.out.println("Please select your operation (Administrator):");
         System.out.println();
         System.out.println("   1. Select a space shuttle");
         System.out.println("   2. Create selection criteria");
@@ -86,7 +86,7 @@ public class Display {
         System.out.println();
         System.out.println("*** Operation Selection ***");
         System.out.println();
-        System.out.println("Please select your operation:");
+        System.out.println("Please select your operation (Coordinator):");
         System.out.println();
         System.out.println("    1. Create a mission");
         System.out.println("    2. Log out");
@@ -98,7 +98,7 @@ public class Display {
         System.out.println();
         System.out.println("*** Operation Selection ***");
         System.out.println();
-        System.out.println("Please select your operation:");
+        System.out.println("Please select your operation (Candidate):");
         System.out.println();
         System.out.println("    1. Log out");
         System.out.println();
@@ -124,6 +124,12 @@ public class Display {
     public void displayLogOutConfirmation() {
         System.out.println("    Press Y to log out");
         System.out.println("    Press N to go back");
+    }
+
+    public void displayCreateMission() {
+        System.out.println("                ***");
+        System.out.println("          Create a Mission");
+        System.out.println("                ***");
     }
 
     public void missionInfo() {
@@ -249,8 +255,57 @@ public class Display {
     }
     
     // feature 3 create criteria
-    public void displayCriteria() {
-        
+    public void displayCreateCriteria() {
+        System.out.println("                ***");
+        System.out.println("       Create Selection Criteria");
+        System.out.println("                ***");
+        System.out.println();
+        System.out.println("Please enter the following information:");
+        System.out.print("Range of Age: ");
+    }
+
+    public void displayHealthRecord() {
+        System.out.print("Health Record: ");
+    }
+
+    public void displayCriminalRecord() {
+        System.out.print("Criminal Record: ");
+    }
+
+    /*public void displayCriteria(String criteriaName, String criteriaInformation) {
+        System.out.println("*******New Criteria********");
+        System.out.println("Criteria Name: "+ criteriaName);
+        System.out.println("Criteria Information: "+ criteriaInformation);
+        System.out.println(" 1. Confirm criteria. \n 2. Create new criteria. ");
+
+    }*/
+
+    public void displayConfirmCriteria(){
+        System.out.println();
+        System.out.println("                ***");
+        System.out.println("          CRITERIA CREATED");
+        System.out.println("                ***");
+        System.out.println();
+    }
+
+    public void displaySelectPriority() {
+        System.out.println("Please select the prioritized criteria:");
+        System.out.println("Input 1 to select range of age. Input 2 to select health record. Input 3 to select criminal record.");
+    }
+
+    public void displaySelectedAge() {
+        System.out.println("Range of Age has been selected as the prioritized criteria");
+        System.out.println("The creation process has finished\n");
+    }
+
+    public void displaySelectedHealth() {
+        System.out.println("Health Record has been selected as the prioritized criteria");
+        System.out.println("The creation process has finished\n");
+    }
+
+    public void displaySelectedCriminal() {
+        System.out.println("Criminal Record has been selected as the prioritized criteria");
+        System.out.println("The creation process has finished\n");
     }
 
 
@@ -265,11 +320,12 @@ public class Display {
     //display selected candidates
     public void displayCandidates(String...strings){
         System.out.println("The selected candidates are: \n" + strings[0] + "\n" + strings[1] + "\n" + strings[2] + "\n" + strings[3] + "\n" + strings[4]);
+        System.out.println();
     }
 
     // display send invitation message
     public void displaySendInvitation() {
-        System.out.println("\nNow the system will send an invitation to them automatically\n");
+        System.out.println("Now the system will send an invitation to them automatically\n");
     }
 
     // display invitation sent message
@@ -287,4 +343,15 @@ public class Display {
         System.out.println("Congratulations! All the candidates accepted the invitation");
         System.out.println("Now the system will generate the selected candidates list\n");
     }
+
+    public void displayInform(String...strings){
+        System.out.println("Now the system will send a notification to the coordinator");
+        System.out.println("Press N to continue");
+    }
+
+    public void displayInformSuccessful(String...strings){
+        System.out.println("The coordinator has been informed, the selection process finished");
+        System.out.println("Press N to continue");
+    }
+
 }
