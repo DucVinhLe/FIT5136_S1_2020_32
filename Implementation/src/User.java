@@ -126,7 +126,7 @@ public class User {
         buff.close();
     }
 
-    public static void selectCandidates() {
+    public void selectCandidates() {
         Display display = new Display();
         String[] info;
         try {
