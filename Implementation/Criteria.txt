@@ -1,6 +1,15 @@
 
 *******************************************
 Criteria Type: Range of Age
+<<<<<<< HEAD
+Criteria Information:18-20
+*******************************************
+Criteria Type: Health Record
+Criteria Information:Good
+*******************************************
+Criteria Type: Criminal Record
+Criteria Information:NO
+=======
 Criteria Information:12-80
 *******************************************
 Criteria Type: Health Record
@@ -8,3 +17,4 @@ Criteria Information:No heart disease
 *******************************************
 Criteria Type: Criminal Record
 Criteria Information:No criminal record is allowed
+>>>>>>> 1260f9ba2bc5ba9bb1dbe927674f282e5187ddba
