@@ -1,25 +1,21 @@
-public class Display {
+// Author: @Team 32
 
-    public Display() {
+public class UserInterface {
+    public UserInterface() { }
 
-    }
-
-    public static void main(String[] args) {
-
-    }
+    public static void main(String[] args) { }
 
     public void displayContinue() {
         System.out.println("Press N to continue");
     }
-
 
     public void goBack() {
         System.out.println();
         System.out.println("Press B to go back");
     }
 
-
     public void displayLoginUsername() {
+        clearScreen();
         System.out.println(" ");
         System.out.println("*** Welcome to Login Screen ***");
         System.out.println();
@@ -35,6 +31,7 @@ public class Display {
 
     // feature 1 login fail
     public void displayLoginFailed() {
+        clearScreen();
         System.out.println();
         System.out.println("           ***");
         System.out.println("       Login Failed");
@@ -46,19 +43,19 @@ public class Display {
 
     // feature 1 login successful
     public void displayLoginSuccessful(String username) {
+        clearScreen();
         System.out.println();
         System.out.println("             ***");
         System.out.println("      Login Successful");
         System.out.println("             ***");
         System.out.println(" ");
-        System.out.println("       Hi! " + username + " =)");
+        System.out.println("      Hi! " + username + " =)");
         System.out.println();
     }
 
-
-
     // log out successful
     public void displayLogOutSuccessful() {
+        System.out.print('\u000C');
         System.out.println();
         System.out.println("             ***");
         System.out.println("    Logged out successful");
@@ -69,6 +66,7 @@ public class Display {
 
     // display operation selections for administrator
     public void displayOperationAdmin() {
+        System.out.print('\u000C');
         System.out.println();
         System.out.println("*** Operation Selection ***");
         System.out.println();
@@ -83,6 +81,7 @@ public class Display {
 
     // display operation selections for coordinator
     public void displayOperationCoordinator() {
+        System.out.print('\u000C');
         System.out.println();
         System.out.println("*** Operation Selection ***");
         System.out.println();
@@ -95,6 +94,7 @@ public class Display {
 
     // display operation selections for candidate
     public void displayOperationCandidate() {
+        System.out.print('\u000C');
         System.out.println();
         System.out.println("*** Operation Selection ***");
         System.out.println();
@@ -113,9 +113,9 @@ public class Display {
     // display log out
     public void displayLogOut() {
         System.out.println();
-        System.out.println("          *** Log Out ***");
+        System.out.println("   *** Log Out ***");
         System.out.println();
-        System.out.println("     Are you sure to log out?");
+        System.out.println("Are you sure to log out?");
         System.out.println();
         displayLogOutConfirmation();
     }
@@ -133,20 +133,20 @@ public class Display {
     }
 
     public void missionInfo() {
-        System.out.println("Please Enter the following information:");
+        System.out.println("Please enter the following information");
         System.out.print("Mission name: ");
     }
 
     public void displayNotEmpty() {
-        System.out.print("The input cannot be empty, please input again: ");
+        System.out.print("The input cannot be empty");
     }
 
     public void displayDescriptionShort() {
-        System.out.print("The input needs to be at least 10 words long, please enter again:\n");
+        System.out.print("The input needs to be at least 10 words long\n");
     }
 
     public void displayDurationYears() {
-        System.out.print("The input needs to be a number (years), please input again: ");
+        System.out.print("The input needs to be a number (years)");
     }
 
     public void missionDescription() {
@@ -163,12 +163,12 @@ public class Display {
 
     public void missionStatus() {
         System.out.println("Select the current mission status from:");
-        System.out.println("      1. Planning phase");
-        System.out.println("      2. Departed Earth");
-        System.out.println("      3. Landed on Mars");
-        System.out.println("      4. Mission in progress");
-        System.out.println("      5. Returned to Earth");
-        System.out.println("      6. Mission completed");
+        System.out.println("     1. Planning phase");
+        System.out.println("     2. Departed Earth");
+        System.out.println("     3. Landed on Mars");
+        System.out.println("     4. Mission in progress");
+        System.out.println("     5. Returned to Earth");
+        System.out.println("     6. Mission completed\n");
         System.out.print("Mission Status: ");
     }
 
@@ -177,7 +177,7 @@ public class Display {
     }
 
     public void displayLocation() {
-        System.out.print("Location of the destination(coordinates or address): ");
+        System.out.print("Location of the destination (coordinates or address): ");
     }
 
     public void displayDuration() {
@@ -194,7 +194,7 @@ public class Display {
     }
 
     public void displayCargoRequirements() {
-        System.out.print("Cargo requirements(for journey, mission and other missions): ");
+        System.out.print("Cargo requirements (for journey, mission and other missions): ");
     }
 
     public void displayCoordinator() {
@@ -208,7 +208,6 @@ public class Display {
         System.out.println("                ***");
         System.out.println();
     }
-
 
     // feature 2 enter shuttle ID
     public void enterShuttleID() {
@@ -239,6 +238,7 @@ public class Display {
 
     // feature 2 Successfully selected shuttle
     public void displaySuccessfullySelectedShuttle(String id) {
+        System.out.print('\u000C');
         System.out.println();
         System.out.println("Successfully selected Shuttle " + id + " !");
         System.out.println();
@@ -246,7 +246,7 @@ public class Display {
         System.out.println("              -/  \\-");
         System.out.println("              [ (M) ]");
         System.out.println("         --==||     ||==--");
-        System.out.println("               " + id);
+        System.out.println("                " + id);
         System.out.println("         -==+=|     |=+==- ");
         System.out.println("              \\    /");
         System.out.println("             % \\  / %");
@@ -272,14 +272,6 @@ public class Display {
         System.out.print("Criminal Record: ");
     }
 
-    /*public void displayCriteria(String criteriaName, String criteriaInformation) {
-        System.out.println("*******New Criteria********");
-        System.out.println("Criteria Name: "+ criteriaName);
-        System.out.println("Criteria Information: "+ criteriaInformation);
-        System.out.println(" 1. Confirm criteria. \n 2. Create new criteria. ");
-
-    }*/
-
     public void displayConfirmCriteria(){
         System.out.println();
         System.out.println("                ***");
@@ -290,27 +282,27 @@ public class Display {
 
     public void displaySelectPriority() {
         System.out.println("Please select the prioritized criteria:");
-        System.out.println("Input 1 to select range of age. Input 2 to select health record. Input 3 to select criminal record.");
+        System.out.println("  1. range of age");
+        System.out.println("  2. health record");
+        System.out.println("  3. criminal record");
     }
 
     public void displaySelectedAge() {
         System.out.println("Range of Age has been selected as the prioritized criteria");
-        System.out.println("The creation process has finished\n");
+        System.out.println("The creation process has finished!\n");
     }
 
     public void displaySelectedHealth() {
         System.out.println("Health Record has been selected as the prioritized criteria");
-        System.out.println("The creation process has finished\n");
+        System.out.println("The creation process has finished!\n");
     }
 
     public void displaySelectedCriminal() {
         System.out.println("Criminal Record has been selected as the prioritized criteria");
-        System.out.println("The creation process has finished\n");
+        System.out.println("The creation process has finished!\n");
     }
 
-
     // feature 4 select candidates
-
     public void displaySelectCandidates() {
         System.out.println();
         System.out.println("   *** Select Candidates ***");
@@ -331,7 +323,8 @@ public class Display {
 
     // display invitation sent message
     public void displaySent() {
-        System.out.println("The invitations have been sent successfully, press N to view their feedback: ");
+        System.out.println("The invitations have been sent successfully");
+        System.out.println("press N to view their feedback ");
     }
 
     //display candidate refused
@@ -342,7 +335,8 @@ public class Display {
 
     //display candidate accept
     public void displayCandidateAccept() {
-        System.out.println("Congratulations! All the candidates accepted the invitation");
+        System.out.println("Congratulations!!!");
+        System.out.println("All the candidates accepted the invitation");
         System.out.println("Now the system will generate the selected candidates list\n");
     }
 
@@ -356,4 +350,16 @@ public class Display {
         System.out.println("Press N to continue");
     }
 
+    public static void displayShuttleInfo() {
+        System.out.println("*** Space Shuttle Information ***");
+    }
+
+    public static void displayStar() {
+        System.out.println("*********************************");
+    }
+
+    public static void clearScreen() {
+        System. out. print("\033[H\033[2J");
+        System. out. flush();
+    }
 }

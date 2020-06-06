@@ -1,3 +1,5 @@
+// Author: @Team 32
+
 public class Mission {
 
     private String name;
@@ -13,13 +15,9 @@ public class Mission {
     private String cargoRequirements;
     private String coordinatorInfo;
 
-    public Mission() {
+    public Mission() { }
 
-    }
-
-    public static void main(String[] args){
-
-    }
+    public static void main(String[] args){ }
 
     public String getName(){
         return name;
@@ -116,5 +114,4 @@ public class Mission {
     public void setStatus(String status){
         this.status = status;
     }
-
 }
