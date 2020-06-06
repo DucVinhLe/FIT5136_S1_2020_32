@@ -72,7 +72,7 @@ public class MissionToMarsSystem {
             // login failed
             if (!success) {
                 screen.displayLoginFailed();
-                String input = scanner.next();
+                String input = scanner.next().toUpperCase();
                 // input validation
                 while (!input.equals("B")) {
                     screen.goBack();
@@ -80,7 +80,7 @@ public class MissionToMarsSystem {
                 }
             } else {
                 screen.displayContinue();
-                String input = scanner.next();
+                String input = scanner.next().toUpperCase();
                 // input validation
                 while (!input.equals("N")) {
                     screen.displayContinue();
@@ -189,7 +189,7 @@ public class MissionToMarsSystem {
 
         screen.displayConfirmCriteria();
         screen.displayContinue();
-        String input = scanner.nextLine();
+        String input = scanner.nextLine().toUpperCase();
         // input validation
         while (!input.equals("N")) {
             screen.displayValidInput();
@@ -211,7 +211,7 @@ public class MissionToMarsSystem {
         }
 
         screen.displayContinue();
-        input = scanner.next();
+        input = scanner.next().toUpperCase();
         // input validation
         while (!input.equals("N")) {
             screen.displayValidInput();
@@ -426,7 +426,7 @@ public class MissionToMarsSystem {
 
         screen.displayConfirmMission();
         screen.displayContinue();
-        String input = scanner.next();
+        String input = scanner.next().toUpperCase();
         // input validation
         while (!input.equals("N")) {
             screen.displayValidInput();

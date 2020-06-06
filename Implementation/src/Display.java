@@ -325,7 +325,8 @@ public class Display {
 
     // display send invitation message
     public void displaySendInvitation() {
-        System.out.println("Now the system will send an invitation to them automatically\n");
+        System.out.println("Now the system will send an invitation to them automatically");
+        System.out.println("Sending......\n");
     }
 
     // display invitation sent message
@@ -336,20 +337,21 @@ public class Display {
     //display candidate refused
     public void displayCandidateRefuse(String...strings){
         System.out.println(strings[0]+" has refused the invitation\n" + "The system will now send invitation to the replacement candidates");
+        System.out.println("Sending......\n");
     }
 
     //display candidate accept
-    public void displayCandidateAccept(String...strings){
+    public void displayCandidateAccept() {
         System.out.println("Congratulations! All the candidates accepted the invitation");
         System.out.println("Now the system will generate the selected candidates list\n");
     }
 
-    public void displayInform(String...strings){
+    public void displayInform() {
         System.out.println("Now the system will send a notification to the coordinator");
-        System.out.println("Press N to continue");
+        System.out.println("Sending......\n");
     }
 
-    public void displayInformSuccessful(String...strings){
+    public void displayInformSuccessful() {
         System.out.println("The coordinator has been informed, the selection process finished");
         System.out.println("Press N to continue");
     }

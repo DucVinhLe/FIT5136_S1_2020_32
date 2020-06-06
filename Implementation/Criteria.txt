@@ -1,1 +1,10 @@
 
+*******************************************
+Criteria Type: Range of Age
+Criteria Information:12-80
+*******************************************
+Criteria Type: Health Record
+Criteria Information:No heart disease
+*******************************************
+Criteria Type: Criminal Record
+Criteria Information:No criminal record is allowed

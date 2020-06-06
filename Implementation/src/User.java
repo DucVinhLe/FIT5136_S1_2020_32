@@ -9,6 +9,8 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.spi.CalendarDataProvider;
 
+import static java.lang.Thread.sleep;
+
 public class User {
     private int userId;
     private String type;
@@ -89,7 +91,7 @@ public class User {
         screen.displayLogOut();
 
         Scanner scanner = new Scanner(System.in);
-        String input = scanner.next();
+        String input = scanner.next().toUpperCase();
         // input validation
         while (!(input.equals("N") || input.equals("Y"))) {
             screen.displayLogOutConfirmation();
@@ -138,40 +140,39 @@ public class User {
                     sb.append(System.lineSeparator());
                     line = br.readLine();
                 }
-               String everything = sb.toString();
+                String everything = sb.toString();
                 info = everything.split("\\R");
 
                 display.displaySelectCandidates();
                 display.displayCandidates(info[0],info[1],info[2],info[3],info[4]);
                 display.displaySendInvitation();
-                display.displayContinue();
 
                 Scanner scanner = new Scanner(System.in);
                 String temp;
 
-                temp = scanner.nextLine();
-                while (!temp.equals("N")) {
-                    display.displayContinue();
-                    temp = scanner.nextLine();
-                }
 
+                try {
+                    sleep(3000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
                 display.displaySent();
-                temp = scanner.nextLine();
+                temp = scanner.nextLine().toUpperCase();
                 while (!temp.equals("N")) {
                     display.displayContinue();
                     temp = scanner.nextLine();
                 }
 
                 display.displayCandidateRefuse(info[1]);
-                display.displayContinue();
-                temp = scanner.nextLine();
-                while (!temp.equals("N")) {
-                    display.displayContinue();
-                    temp = scanner.nextLine();
+
+                try {
+                    sleep(3000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
                 }
 
                 display.displaySent();
-                temp = scanner.nextLine();
+                temp = scanner.nextLine().toUpperCase();
                 while (!temp.equals("N")) {
                     display.displayContinue();
                     temp = scanner.nextLine();
@@ -181,12 +182,12 @@ public class User {
                 display.displayCandidateAccept();
 
                 display.displayContinue();
-                temp = scanner.nextLine();
+                temp = scanner.nextLine().toUpperCase();
                 while (!temp.equals("N")) {
                     display.displayContinue();
                     temp = scanner.nextLine();
                 }
-                display.displayCandidates(info[0],info[2],info[3],info[4],info[5]);
+                display.displayCandidates(info[0],info[5],info[2],info[3],info[4]);
 
                 //write to file
                 List<String> lines = Arrays.asList("The selected candidates are:",info[0],info[5],info[2],info[3],info[4]);
@@ -194,21 +195,21 @@ public class User {
                 Files.write(file, lines, StandardCharsets.UTF_8);
 
                 display.displayContinue();
-                temp = scanner.nextLine();
+                temp = scanner.nextLine().toUpperCase();
                 while (!temp.equals("N")) {
                     display.displayContinue();
                     temp = scanner.nextLine();
                 }
 
                 display.displayInform();
-                temp = scanner.nextLine();
-                while (!temp.equals("N")) {
-                    display.displayContinue();
-                    temp = scanner.nextLine();
+                try {
+                    sleep(3000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
                 }
 
                 display.displayInformSuccessful();
-                temp = scanner.nextLine();
+                temp = scanner.nextLine().toUpperCase();
                 while (!temp.equals("N")) {
                     display.displayContinue();
                     temp = scanner.nextLine();
@@ -269,7 +270,7 @@ public class User {
                                 //,spaceShuttle[5].trim(),spaceShuttle[6].trim(),spaceShuttle[7].trim());
                         displaySpaceShuttle.displaySuccessfullySelectedShuttle(id);
                         displaySpaceShuttle.displayContinue();
-                        String input1 = input.next();
+                        String input1 = input.next().toUpperCase();
                         // input validation
                         while (!input1.equals("N")) {
                             displaySpaceShuttle.displayValidInput();
