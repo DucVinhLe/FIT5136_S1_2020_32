@@ -122,10 +122,9 @@ public class User {
 
 
 
-    public void selectCandidates() {
-        Display display = new Display();
 
-        public static void selectCandidates () {
+
+        public static void selectCandidates() {
             UserInterface display = new UserInterface();
 
             String[] info;
