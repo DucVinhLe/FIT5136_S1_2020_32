@@ -1,3 +1,5 @@
+// Author: @Team 32
+
 public class Administrator extends User {
     public Mission modifyMission(int params){
         return null;
@@ -15,6 +17,5 @@ public class Administrator extends User {
         return null;
     }
     public void inform (int params){
-
     }
 }
