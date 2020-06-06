@@ -1,27 +1,2 @@
-*******************************************
-Mission Name: Mission 1
-Mission Description: 1 2 3 4 5 6 7 8 1 2 3 4
-Country of Origin: CHIA
-Countries Allowed : cHIA
-Mission Status : Departed Earth
-Launch Date : 12/31
-Mission Location: AS, 12
-Mission Duration: 12
-Job Information : WORKER
-Employment Requirements: 3 workers
-Cargo Requirements: idk
-Coordinator Information: Yiwei 9090980
-*******************************************
-Mission Name: Mission 1
-Mission Description: 1 2 3 4 5 6 7 8 1 2 3 4
-Country of Origin: CHIA
-Countries Allowed : cHIA
-Mission Status : Departed Earth
-Launch Date : 12/31
-Mission Location: AS, 12
-Mission Duration: 12
-Job Information : WORKER
-Employment Requirements: 3 workers
-Cargo Requirements: idk
-Coordinator Information: Yiwei 9090980
+
 

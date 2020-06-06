@@ -61,7 +61,6 @@ public class MissionToMarsSystem {
             }
             // login failed
             if (!success) {
-                System.out.print('\u000C');
                 screen.displayLoginFailed();
                 String input = scanner.next().toUpperCase();
                 // input validation
@@ -171,6 +170,7 @@ public class MissionToMarsSystem {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
         screen.displayConfirmCriteria();
         screen.displayContinue();
         String input = scanner.nextLine().toUpperCase();
@@ -200,6 +200,7 @@ public class MissionToMarsSystem {
             input = scanner.next();
         }
     }
+
     public void createMission(User user) {
         UserInterface screen = new UserInterface();
         Scanner scanner = new Scanner(System.in);

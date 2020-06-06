@@ -15,7 +15,6 @@ public class UserInterface {
     }
 
     public void displayLoginUsername() {
-        clearScreen();
         System.out.println(" ");
         System.out.println("*** Welcome to Login Screen ***");
         System.out.println();
@@ -31,7 +30,6 @@ public class UserInterface {
 
     // feature 1 login fail
     public void displayLoginFailed() {
-        clearScreen();
         System.out.println();
         System.out.println("           ***");
         System.out.println("       Login Failed");
@@ -43,7 +41,6 @@ public class UserInterface {
 
     // feature 1 login successful
     public void displayLoginSuccessful(String username) {
-        clearScreen();
         System.out.println();
         System.out.println("             ***");
         System.out.println("      Login Successful");
@@ -55,7 +52,6 @@ public class UserInterface {
 
     // log out successful
     public void displayLogOutSuccessful() {
-        System.out.print('\u000C');
         System.out.println();
         System.out.println("             ***");
         System.out.println("    Logged out successful");
@@ -66,7 +62,6 @@ public class UserInterface {
 
     // display operation selections for administrator
     public void displayOperationAdmin() {
-        System.out.print('\u000C');
         System.out.println();
         System.out.println("*** Operation Selection ***");
         System.out.println();
@@ -81,7 +76,6 @@ public class UserInterface {
 
     // display operation selections for coordinator
     public void displayOperationCoordinator() {
-        System.out.print('\u000C');
         System.out.println();
         System.out.println("*** Operation Selection ***");
         System.out.println();
@@ -94,7 +88,6 @@ public class UserInterface {
 
     // display operation selections for candidate
     public void displayOperationCandidate() {
-        System.out.print('\u000C');
         System.out.println();
         System.out.println("*** Operation Selection ***");
         System.out.println();
@@ -146,7 +139,7 @@ public class UserInterface {
     }
 
     public void displayDurationYears() {
-        System.out.print("The input needs to be a number (years)");
+        System.out.print("The input needs to be a number (years)\n");
     }
 
     public void missionDescription() {
@@ -356,10 +349,5 @@ public class UserInterface {
 
     public static void displayStar() {
         System.out.println("*********************************");
-    }
-
-    public static void clearScreen() {
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
     }
 }
