@@ -1,3 +1,5 @@
+// Author: @Team 32
+
 public class Criteria {
     private String type;
     private String information;

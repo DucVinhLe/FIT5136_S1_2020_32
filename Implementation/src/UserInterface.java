@@ -1,6 +1,8 @@
-public class Display {
+// Author: @Team 32
 
-    public Display() {
+public class UserInterface {
+
+    public UserInterface() {
 
     }
 

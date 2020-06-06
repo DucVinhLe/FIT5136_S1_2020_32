@@ -1,3 +1,5 @@
+// Author: @Team 32
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -12,19 +14,15 @@ public class MissionToMarsSystem {
         MissionToMarsSystem system = new MissionToMarsSystem();
         User user1 = new User();
         system.login(user1);
-
         while (true) {
             int userChoice = system.selectOperation(system, user1); // Variable userChoice
         }
-
-
         // selectSpaceShuttle
-
     }
 
     // system login function, include user password validation
     public void login(User user) {
-        Display screen = new Display();
+        UserInterface screen = new UserInterface();
         boolean success = false;
 
         while (!success) {
@@ -93,7 +91,7 @@ public class MissionToMarsSystem {
     }
 
     public int selectOperation(MissionToMarsSystem system, User user) throws IOException {
-        Display screen = new Display();
+        UserInterface screen = new UserInterface();
         Scanner scanner = new Scanner(System.in);
         int operation = 0;
         if (user.getType().equals("Administrator")) {
@@ -141,7 +139,7 @@ public class MissionToMarsSystem {
     }
 
     public void createCriteria(User user) throws IOException {
-        Display screen = new Display();
+        UserInterface screen = new UserInterface();
         Scanner scanner = new Scanner(System.in);
 
         Criteria criteria1 = new Criteria();
@@ -261,7 +259,7 @@ public class MissionToMarsSystem {
 
 
     public void createMission(User user) {
-        Display screen = new Display();
+        UserInterface screen = new UserInterface();
         Scanner scanner = new Scanner(System.in);
         Mission mission1 = new Mission();
 
@@ -301,8 +299,8 @@ public class MissionToMarsSystem {
         cnt = 0;
         for (int i = 0; i < description.length(); i++) {
             char c = description.charAt(i);
-            if (c ==' ') {
-                cnt ++;
+            if (c == ' ') {
+                cnt++;
             }
         }
         while (cnt < 9) {
@@ -311,8 +309,8 @@ public class MissionToMarsSystem {
             cnt = 0;
             for (int i = 0; i < description.length(); i++) {
                 char c = description.charAt(i);
-                if (c ==' ') {
-                    cnt ++;
+                if (c == ' ') {
+                    cnt++;
                 }
             }
         }
@@ -340,7 +338,7 @@ public class MissionToMarsSystem {
             screen.displayNotEmpty();
             status = scanner.nextLine();
         }
-        while (!(status.equals("1") || status.equals("2") ||status.equals("3") ||status.equals("4") ||status.equals("5") ||status.equals("6"))) {
+        while (!(status.equals("1") || status.equals("2") || status.equals("3") || status.equals("4") || status.equals("5") || status.equals("6"))) {
             screen.displayValidInput();
             status = scanner.nextLine();
         }
@@ -370,7 +368,7 @@ public class MissionToMarsSystem {
         location = scanner.nextLine();
         while (location.equals("")) {
             screen.displayNotEmpty();
-           location = scanner.nextLine();
+            location = scanner.nextLine();
         }
         mission1.setLocation(location);
 
@@ -437,8 +435,8 @@ public class MissionToMarsSystem {
     // The method is retrieved from internet
     // Check whether a String is a number
     private boolean isNumeric(String str) {
-        for (int i = str.length();--i>=0;){
-            if (!Character.isDigit(str.charAt(i))){
+        for (int i = str.length(); --i >= 0; ) {
+            if (!Character.isDigit(str.charAt(i))) {
                 return false;
             }
         }

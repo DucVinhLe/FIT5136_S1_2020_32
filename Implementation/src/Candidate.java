@@ -1,3 +1,5 @@
+// Author: @Team 32
+
 import java.util.Date;
 
 public class Candidate extends User {

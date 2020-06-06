@@ -1,3 +1,5 @@
+// Author: @Team 32
+
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -7,7 +9,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
-import java.util.spi.CalendarDataProvider;
 
 import static java.lang.Thread.sleep;
 
@@ -87,7 +88,7 @@ public class User {
     }
 
     public void logOut() {
-        Display screen = new Display();
+        UserInterface screen = new UserInterface();
         screen.displayLogOut();
 
         Scanner scanner = new Scanner(System.in);
@@ -127,7 +128,7 @@ public class User {
     }
 
     public static void selectCandidates() {
-        Display display = new Display();
+        UserInterface display = new UserInterface();
         String[] info;
         try {
             BufferedReader br = new BufferedReader(new FileReader("Candidates.txt"));
@@ -226,7 +227,7 @@ public class User {
     // selectSpaceShuttle Method
     public void selectSpaceShuttle(){
         ArrayList<String> spaceInfo = new ArrayList<>();
-        Display displaySpaceShuttle = new Display();
+        UserInterface displaySpaceShuttle = new UserInterface();
         String[] spaceShuttle = {};
         try{
             File spaceShuttleFile = new File("SpaceShuttle.txt");
