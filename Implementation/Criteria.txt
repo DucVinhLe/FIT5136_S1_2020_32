@@ -1,1 +1,10 @@
 
+*******************************************
+Criteria Type: Range of Age
+Criteria Information:18-20
+*******************************************
+Criteria Type: Health Record
+Criteria Information:Good
+*******************************************
+Criteria Type: Criminal Record
+Criteria Information:NO
